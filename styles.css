@@ -511,6 +511,7 @@ button.filter-chip--topic[aria-pressed="true"] {
 }
 
 .pub-filter-status {
+  max-width: none;
   font-family: var(--font-mono);
   font-size: 0.8rem;
   color: var(--color-ink-soft);
@@ -544,6 +545,7 @@ button.filter-chip--topic[aria-pressed="true"] {
   gap: var(--space-3);
   align-items: flex-start;
 }
+.pub-card[hidden] { display: none; }
 .pub-thumb {
   position: relative;
   flex: 0 0 140px;
