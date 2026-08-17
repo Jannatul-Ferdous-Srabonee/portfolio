@@ -3,59 +3,90 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jannatul Ferdous Srabonee — HCI Researcher, Accessibility</title>
+<title>Jannatul Ferdous Srabonee — HCI Researcher</title>
 <meta name="description" content="Portfolio of Jannatul Ferdous Srabonee, an HCI researcher specializing in inclusive interaction design.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"> -->
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&family=Lexend:wght@400;500;600&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
 <div class="site">
-  <button class="mobile-nav-toggle" aria-expanded="false">☰ Menu</button>
-  <aside class="sidebar">
-    <div class="sidebar__name">Jannatul Ferdous Srabonee</div>
-    <div class="sidebar__role">HCI Researcher<br>inclusive Interaction Design</div>
-    <nav aria-label="Primary">
-      <ul class="nav-list">
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="work.html">Research &amp; Case Studies</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="accessibility.html">Accessibility Statement</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="sidebar__meta">
-      <a href="https://orcid.org" target="_blank" rel="noopener">ORCID ↗</a>
-      <a href="https://scholar.google.com" target="_blank" rel="noopener">Google Scholar ↗</a>
-      <a href="cv.pdf">Download CV (PDF)</a>
-    </div>
-  </aside>
-
   <main id="main-content">
     <div class="content">
-      <p class="eyebrow">Portfolio — sample build</p>
-      <h1>Designing technology that works with how people actually perceive, move, and think.</h1>
-      <p>I'm an HCI researcher focused on inclusive interaction design — studying how people with visual, motor, and cognitive disabilities use everyday interfaces, and building tools and design patterns that close the gaps I find. My work sits at the intersection of empirical research, prototyping, and design systems.</p>
+      <section class="hero">
+        <div class="hero__copy">          
+          <aside class="sidebar">        
+            <nav aria-label="Primary">
+              <ul class="nav-list">
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <!-- <li><a href="work.html">Research &amp; Case Studies</a></li> -->
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="accessibility.html">Resources</a></li>
+                <li><a href="assets/CV.pdf">CV</a></li>
+              </ul>
+            </nav>        
+          </aside>
+          <h1>Jannatul Ferdous Srabonee</h1>
+          <div class="sidebar__meta">    
+            <a class="social-icon-link" href="https://orcid.org/0000-0003-3605-6586" target="_blank" rel="noopener" aria-label="ORCID">
+              <img class="social-icon" src="assets/orcid-icon.svg" alt="">
+            </a>
+            <a class="social-icon-link" href="https://scholar.google.com/citations?user=H9CizIwAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar">
+              <img class="social-icon" src="assets/google-scholar-icon.svg" alt="">
+            </a>            
+            <a class="social-icon-link" href="https://www.researchgate.net/profile/Jannatul-Srabonee?ev=hdr_xprf" target="_blank" rel="noopener" aria-label="ResearchGate">
+              <img class="social-icon" src="assets/researchgate-icon.svg" alt="">
+            </a>
+            <a class="social-icon-link" href="https://www.linkedin.com/in/jannatul-ferdous-srabonee/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <img class="social-icon" src="assets/linkedin-icon.svg" alt="">
+            </a>
+          </div>
+        </div>
+        <figure class="hero__headshot">
+          <img src="assets/headshot.png" alt="Portrait of Jannatul Ferdous Srabonee">
+        </figure>
+      </section>
+      <p class="hero__email"><a href="mailto:jfsrabonee@hotmail.com"><img class="email-icon" src="assets/email-icon.svg" alt="" aria-hidden="true">jfsrabonee@hotmail.com</a></p>
 
-      <div class="tag-row">
+      <!-- <div class="tag-row">
         <span class="chip">Accessibility</span>
         <span class="chip">Assistive Technology</span>
         <span class="chip">Inclusive Design</span>
         <span class="chip">Mixed Methods</span>
         <span class="chip">Design Systems</span>
-      </div>
+      </div> -->
+      
 
-      <p><a class="btn" href="work.html">See research &amp; case studies →</a></p>
+      <!-- <p><a class="btn" href="work.html">See research &amp; case studies →</a></p> -->
 
-      <h2 style="margin-top: var(--space-5);">A note on this site</h2>
-      <p>This portfolio is built to WCAG 2.2 AA as a baseline, tested with keyboard-only navigation and a screen reader, and every data visualization here ships with an inclusive table fallback. The badge in the corner shows, in real time, whether the site currently thinks you're navigating by mouse or keyboard — try pressing <kbd>Tab</kbd> a few times.</p>
+      <h2 style="margin-top: var(--space-5);">About Me</h2>
+      <!-- <p>This portfolio is built to WCAG 2.2 AA as a baseline, tested with keyboard-only navigation and a screen reader, 
+        and every data visualization here ships with an inclusive table fallback. The badge in the corner shows, in real time, 
+        whether the site currently thinks you're navigating by mouse or keyboard — try pressing <kbd>Tab</kbd> a few times.</p> -->
+      <p align="justify">
+        I am a PhD candidate in Electrical Engineering and Computer Science at the 
+        <a class="link" href="https://www.ucmerced.edu/">University of California, Merced</a>, where I conduct
+        research in the <a class="link" href="https://www.theiilab.com/">Inclusive Interaction Lab</a> advised by Dr. Ahmed Arif. I 
+        completed my BSc in Computer Science and Engineering from Khulna University of Engineering & Technology. 
+      </p>
+      <p align="justify">
+        My research focuses on designing and developing inclusive input and interaction techniques for digital systems. My current 
+        work spans brain-computer interfaces, applied artificial intelligence, gesture mapping, and eye tracking, particularly for 
+        individuals with motor and vision impairments. Beyond these, I actively look to other domains for inspiration and translate 
+        what I find into new tools in pursuit of more inclusive interaction.
+      </p>
 
-      <h2 style="margin-top: var(--space-5);">Currently</h2>
+      <h2 style="margin-top: var(--space-5);">News</h2>
       <p>Postdoctoral researcher studying screen-reader navigation efficiency in data-dense interfaces, and collaborating with two accessibility teams on component-level design guidance. Open to research scientist and UX research roles.</p>
     </div>
   </main>
+</div>
+<div>
+  
 </div>
 
 <div id="input-mode-badge" aria-hidden="true">
@@ -63,6 +94,6 @@
   <span id="input-mode-label">Input: Mouse</span>
 </div>
 
-<script src="js/script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

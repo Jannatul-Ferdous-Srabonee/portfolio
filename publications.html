@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications — Jannatul Ferdous Srabonee</title>
+<meta name="description" content="Peer-reviewed publications on accessible interaction design.">
+<!-- <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"> -->
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&family=Lexend:wght@400;500;600&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<div class="site">
+  <main id="main-content">
+    <div class="content">
+      <section class="hero">
+        <div class="hero__copy">          
+          <aside class="sidebar">        
+            <nav aria-label="Primary">
+              <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <!-- <li><a href="work.html">Research &amp; Case Studies</a></li> -->
+                <li><a href="publications.html" aria-current="page">Publications</a></li>
+                <li><a href="accessibility.html">Resources</a></li>
+                <li><a href="assets/CV.pdf">CV</a></li>
+              </ul>
+            </nav>        
+          </aside>
+          <h1>Jannatul Ferdous Srabonee</h1>
+          <div class="sidebar__meta">    
+            <a class="social-icon-link" href="https://orcid.org/0000-0003-3605-6586" target="_blank" rel="noopener" aria-label="ORCID">
+              <img class="social-icon" src="assets/orcid-icon.svg" alt="">
+            </a>
+            <a class="social-icon-link" href="https://scholar.google.com/citations?user=H9CizIwAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar">
+              <img class="social-icon" src="assets/google-scholar-icon.svg" alt="">
+            </a>            
+            <a class="social-icon-link" href="https://www.researchgate.net/profile/Jannatul-Srabonee?ev=hdr_xprf" target="_blank" rel="noopener" aria-label="ResearchGate">
+              <img class="social-icon" src="assets/researchgate-icon.svg" alt="">
+            </a>
+            <a class="social-icon-link" href="https://www.linkedin.com/in/jannatul-ferdous-srabonee/" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <img class="social-icon" src="assets/linkedin-icon.svg" alt="">
+            </a>
+          </div>
+        </div>
+        <figure class="hero__headshot">
+          <img src="assets/headshot.png" alt="Portrait of Jannatul Ferdous Srabonee">
+        </figure>
+      </section>
+      <p class="hero__email"><a href="mailto:jfsrabonee@hotmail.com"><img class="email-icon" src="assets/email-icon.svg" alt="" aria-hidden="true">jfsrabonee@hotmail.com</a></p>      
+
+      <!-- <p><a class="btn" href="work.html">See research &amp; case studies →</a></p> -->      
+      <!-- <p class="eyebrow">Publications</p> -->
+      <!-- <p>Filter by type and topic — tags reflect what each paper is about. DOIs link out to the publisher.</p> -->
+      <div class="pub-filters">
+        <fieldset class="filter-group" data-filter-type="type">
+          <legend class="visually-hidden">Filter by publication type</legend>
+          <div class="tag-row" role="group" aria-label="Publication type">
+            <button class="chip filter-chip filter-chip--type" data-filter-value="all" aria-pressed="true">All</button>
+            <button class="chip filter-chip filter-chip--type" data-filter-value="conference">Paper</button>
+            <button class="chip filter-chip filter-chip--type" data-filter-value="journal">Journal</button>
+            <button class="chip filter-chip filter-chip--type" data-filter-value="book">Chapter</button>
+            <button class="chip filter-chip filter-chip--type" data-filter-value="underReview">Under Review</button>
+            <button class="chip filter-chip filter-chip--type" data-filter-value="inProgress">In Progress</button>
+          </div>
+        </fieldset>
+
+        <fieldset class="filter-group" data-filter-type="topic">
+          <legend class="visually-hidden">Filter by topic</legend>
+          <div class="tag-row" role="group" aria-label="Topic">
+            <button class="chip filter-chip filter-chip--topic" data-filter-value="all" aria-pressed="true">All</button>
+            <button class="chip filter-chip filter-chip--topic" data-filter-value="bci">BCI</button>
+            <button class="chip filter-chip filter-chip--topic" data-filter-value="accessibility">Accessibility</button>
+            <button class="chip filter-chip filter-chip--topic" data-filter-value="ai-ml">AI/ML</button>
+            <button class="chip filter-chip filter-chip--topic" data-filter-value="eye-tracking">Eye Tracking</button>
+            <button class="chip filter-chip filter-chip--topic" data-filter-value="gesture-mapping">Gesture Mapping</button>
+            <button class="chip filter-chip filter-chip--topic" data-filter-value="force-pressure">Force/Pressure-Based</button>
+            <button class="chip filter-chip filter-chip--topic" data-filter-value="haptics">Haptics</button>
+            <button class="chip filter-chip filter-chip--topic" data-filter-value="personality">Personality</button>
+            <button class="chip filter-chip filter-chip--topic" data-filter-value="silent-speech">Silent Speech</button>
+            <button class="chip filter-chip filter-chip--topic" data-filter-value="telepresence">Telepresence</button>
+            <button class="chip filter-chip filter-chip--topic" data-filter-value="text-composition">Text Composition</button>
+            <button class="chip filter-chip filter-chip--topic" data-filter-value="text-entry">Text Entry</button>
+          </div>
+        </fieldset>
+      </div>
+
+      <p id="pub-filter-status" role="status" aria-live="polite" class="pub-filter-status"></p>
+
+      <ul class="pub-list" style="list-style:none; padding:0;">
+        <!-- #1 -->
+        <li class="card pub-card" data-type="conference" data-topic="personality text-composition text-entry" data-published="true" data-year="2025">
+          <div class="pub-thumb">
+            <img src="assets/PaperThumbnails/Hexaco.jpg" alt="" loading="lazy">
+          </div>          
+          <div class="pub-body">
+            <h3>Exploring the Impacts of HEXACO Personality Traits on Text Composition and Transcription</h3>
+            <p class="hint" style="margin-bottom:0.5rem;"><b>Jannatul Ferdous Srabonee</b>, Ohoud Mosa Alharbi, Wolfgang Stuerzlinger, &amp; Ahmed Arif. <br>— <em>ACM CHI 2025</em></p>
+            <div class="pub-meta-row">
+              <span class="pub-number"></span>
+              <span class="pub-status-label">Conference Paper</span>
+              <span class="pub-status-label">25%</span>
+              <span><a class="link" href="https://doi.org/10.1145/3706598.3714149" target="_blank" rel="noopener">DOI</a></span>
+              <span><a class="link" href="assets/Papers/Hexaco_CHI2025.pdf">PDF</a></span>
+              <span><a class="link" href="https://www.youtube.com/watch?si=K_kCUgOpx_G3f9C3&v=KwBMVhAcgn4&feature=youtu.be" target="_blank" rel="noopener">Presentation</a></span>
+              <!-- <span class="pub-status-label">Demo</span> -->
+              <!-- <span class="pub-status-label">Source Code</span> -->
+            </div>
+          </div>
+        </li>
+        <!-- #2 -->
+        <li class="card pub-card" data-type="conference" data-topic="accessibility gesture-mapping text-entry" data-published="true" data-year="2026">
+          <div class="pub-thumb">
+            <img src="assets/PaperThumbnails/MobileHCI2026a.png" alt="" loading="lazy">
+          </div>          
+          <div class="pub-body">
+            <h3>BezelBraille: A Braille-Inspired Bezel-Guided Virtual Keyboard for Low Vision and Blind Users</h3>
+            <p class="hint" style="margin-bottom:0.5rem;">Isna Alfi Bustoni, <b>Jannatul Ferdous Srabonee</b>, Gulnar Rakhmetulla, &amp; Ahmed Arif.<br>— <em>MobileHCI 2026</em></p>
+            <div class="pub-meta-row">
+              <span class="pub-number"></span>
+              <span class="pub-status-label">To Appear</span>
+              <!-- <span class="pub-status-label">25%</span> -->
+              <!-- <span><a class="link" href="https://doi.org/" target="_blank" rel="noopener">DOI</a></span> -->
+              <!-- <span><a class="link" href="assets/Papers/.pdf">PDF</a></span> -->
+              <!-- <span><a class="link" href="https://" target="_blank" rel="noopener">Presentation</a></span> -->
+              <!-- <span class="pub-status-label">Demo</span> -->
+              <!-- <span class="pub-status-label">Source Code</span> -->
+            </div>
+          </div>
+        </li>
+        <!-- #3 -->
+        <li class="card pub-card" data-type="conference" data-topic="bci ai-ml" data-published="true" data-year="2020">
+          <div class="pub-thumb">
+            <img src="assets/PaperThumbnails/Hexaco.jpg" alt="" loading="lazy">
+          </div>          
+          <div class="pub-body">
+            <h3>EEG Based Autism Detection Using CNN Through Correlation Based Transformation of Channels' Data</h3>
+            <p class="hint" style="margin-bottom:0.5rem;">Zahrul Jannat Peya, MAH Akhand, <b>Jannatul Ferdous Srabonee</b>, &amp; Nazmul Siddique.<br>— <em>IEEE TENSYMP 2020</em></p>
+            <div class="pub-meta-row">
+              <span class="pub-number"></span>
+              <span class="pub-status-label">Conference Paper</span>
+              <!-- <span class="pub-status-label">25%</span> -->
+              <span><a class="link" href="https://doi.org/10.1109/TENSYMP50017.2020.9230928" target="_blank" rel="noopener">DOI</a></span>
+              <span><a class="link" href="assets/Papers/Hexaco_CHI2025.pdf">PDF</a></span>
+              <!-- <span><a class="link" href="https://" target="_blank" rel="noopener">Presentation</a></span> -->
+              <!-- <span class="pub-status-label">Demo</span> -->
+              <!-- <span class="pub-status-label">Source Code</span> -->
+            </div>
+          </div>
+        </li>
+        <!-- #4 -->
+        <li class="card pub-card" data-type="journal" data-topic="ai-ml" data-published="true" data-year="2023">
+          <div class="pub-thumb">
+            <img src="assets/PaperThumbnails/Hexaco.jpg" alt="" loading="lazy">
+          </div>          
+          <div class="pub-body">
+            <h3>Computer Vision-Based IoT Architecture for Post COVID-19 Preventive Measures</h3>
+            <p class="hint" style="margin-bottom:0.5rem;">Ahsanul Akib, Kamruddin Nur, Suman Saha, <b>Jannatul Ferdous Srabonee</b>, &amp; M. F. Mridha.<br>— <em>Journal of Advances in Information Technology 2023</em></p>
+            <div class="pub-meta-row">
+              <span class="pub-number"></span>
+              <span class="pub-status-label">Journal Article</span>
+              <span class="pub-status-label">Scopus(Q2)</span>
+              <span><a class="link" href="https://doi.org/10.12720/jait.14.1.7-19" target="_blank" rel="noopener">DOI</a></span>
+              <span><a class="link" href="assets/Papers/Hexaco_CHI2025.pdf">PDF</a></span>
+              <!-- <span><a class="link" href="https://www.youtube.com/watch?si=K_kCUgOpx_G3f9C3&v=KwBMVhAcgn4&feature=youtu.be" target="_blank" rel="noopener">Presentation</a></span> -->
+              <!-- <span class="pub-status-label">Demo</span> -->
+              <!-- <span class="pub-status-label">Source Code</span> -->
+            </div>
+          </div>
+        </li>
+        <!-- #5 -->
+        <li class="card pub-card" data-type="journal" data-topic="bci ai-ml" data-published="true" data-year="2022">
+          <div class="pub-thumb">
+            <img src="assets/PaperThumbnails/Hexaco.jpg" alt="" loading="lazy">
+          </div>          
+          <div class="pub-body">
+            <h3>Autism Detection from 2D Transformed EEG Signal using Convolutional Neural Network</h3>
+            <p class="hint" style="margin-bottom:0.5rem;">Zahrul Jannat Peya, MAH Akhand, <b>Jannatul Ferdous Srabonee</b>, &amp; Nazmul Siddique.<br>— <em>Journal of Computer Science 2022</em></p>
+            <div class="pub-meta-row">
+              <span class="pub-number"></span>
+              <span class="pub-status-label">Journal Article</span>
+              <span class="pub-status-label">Scopus(Q4)</span>
+              <span><a class="link" href="https://doi.org/10.3844/jcssp.2022.695.704" target="_blank" rel="noopener">DOI</a></span>
+              <span><a class="link" href="assets/Papers/Hexaco_CHI2025.pdf">PDF</a></span>
+              <!-- <span><a class="link" href="https://www.youtube.com/watch?si=K_kCUgOpx_G3f9C3&v=KwBMVhAcgn4&feature=youtu.be" target="_blank" rel="noopener">Presentation</a></span> -->
+              <!-- <span class="pub-status-label">Demo</span> -->
+              <!-- <span class="pub-status-label">Source Code</span> -->
+            </div>
+          </div>
+        </li>
+        <!-- #6 -->
+        <li class="card pub-card" data-type="book" data-topic="bci ai-ml" data-published="true" data-year="2020">
+          <div class="pub-thumb">
+            <img src="assets/PaperThumbnails/Hexaco.jpg" alt="" loading="lazy">
+          </div>          
+          <div class="pub-body">
+            <h3>Alcoholism Detection from 2D Transformed EEG Signal</h3>
+            <p class="hint" style="margin-bottom:0.5rem;"><b>Jannatul Ferdous Srabonee</b>, Zahrul Jannat Peya, MAH Akhand, &amp; Nazmul Siddique. <br>— <em>IJCACI Springer 2020</em></p>
+            <div class="pub-meta-row">
+              <span class="pub-number"></span>
+              <span class="pub-status-label">Book Chapter</span>
+              <!-- <span class="pub-status-label">25%</span> -->
+              <span><a class="link" href="https://doi.org/10.1007/978-981-16-0586-4_24" target="_blank" rel="noopener">DOI</a></span>
+              <span><a class="link" href="assets/Papers/Hexaco_CHI2025.pdf">PDF</a></span>
+              <!-- <span><a class="link" href="https://www.youtube.com/watch?si=K_kCUgOpx_G3f9C3&v=KwBMVhAcgn4&feature=youtu.be" target="_blank" rel="noopener">Presentation</a></span> -->
+              <!-- <span class="pub-status-label">Demo</span> -->
+              <!-- <span class="pub-status-label">Source Code</span> -->
+            </div>
+          </div>
+        </li>
+        <!-- #7 -->
+        <li class="card pub-card" data-type="underReview" data-topic="accessibility gesture-mapping eye-tracking text-entry" data-year="2026">
+          <div class="pub-thumb">
+            <img src="assets/PaperThumbnails/Hexaco.jpg" alt="" loading="lazy">
+          </div>          
+          <div class="pub-body">
+            <h3>Gaze & Gape: Hands-Free Text Entry Using Gaze and Mouth-Open Gestures</h3>
+            <!-- <p class="hint" style="margin-bottom:0.5rem;"><b>Jannatul Ferdous Srabonee</b>, Ohoud Mosa Alharbi, Wolfgang Stuerzlinger, &amp; Ahmed Arif. <br>— <em>ACM CHI 2025</em></p> -->
+            <div class="pub-meta-row">
+              <span class="pub-number"></span>
+              <span class="pub-status-label">Under Review</span>
+              <!-- <span class="pub-status-label">25%</span> -->
+              <!-- <span><a class="link" href="https://doi.org/" target="_blank" rel="noopener">DOI</a></span> -->
+              <!-- <span><a class="link" href="assets/Papers/.pdf">PDF</a></span> -->
+              <!-- <span><a class="link" href="https://" target="_blank" rel="noopener">Presentation</a></span> -->
+              <!-- <span class="pub-status-label">Demo</span> -->
+              <!-- <span class="pub-status-label">Source Code</span> -->
+            </div>
+          </div>
+        </li>
+        <!-- #8 -->
+        <li class="card pub-card" data-type="underReview" data-topic="eye-tracking telepresence robotics" data-year="2026">
+          <div class="pub-thumb">
+            <img src="assets/PaperThumbnails/Hexaco.jpg" alt="" loading="lazy">
+          </div>          
+          <div class="pub-body">
+            <h3>GazeDriver: Semi and Fully Autonomous Telepresence Robot Control Using Eye Gaze in Virtual Reality</h3>
+            <!-- <p class="hint" style="margin-bottom:0.5rem;"><b>Jannatul Ferdous Srabonee</b>, Ohoud Mosa Alharbi, Wolfgang Stuerzlinger, &amp; Ahmed Arif. <br>— <em>ACM CHI 2025</em></p> -->
+            <div class="pub-meta-row">
+              <span class="pub-number"></span>
+              <span class="pub-status-label">Under Review</span>
+              <!-- <span class="pub-status-label">25%</span> -->
+              <!-- <span><a class="link" href="https://doi.org/" target="_blank" rel="noopener">DOI</a></span> -->
+              <!-- <span><a class="link" href="assets/Papers/">PDF</a></span> -->
+              <!-- <span><a class="link" href="https://" target="_blank" rel="noopener">Presentation</a></span> -->
+              <!-- <span class="pub-status-label">Demo</span> -->
+              <!-- <span class="pub-status-label">Source Code</span> -->
+            </div>
+          </div>
+        </li>
+        <!-- #9 -->
+        <li class="card pub-card" data-type="inProgress" data-topic="text-entry text-composition" data-year="2026">
+          <div class="pub-thumb">
+            <img src="assets/PaperThumbnails/Hexaco.jpg" alt="" loading="lazy">
+          </div>          
+          <div class="pub-body">
+            <h3>Effect of Latency on Real-Time Writing Feedback</h3>
+            <!-- <p class="hint" style="margin-bottom:0.5rem;"><b>Jannatul Ferdous Srabonee</b>, Ohoud Mosa Alharbi, Wolfgang Stuerzlinger, &amp; Ahmed Arif. <br>— <em>ACM CHI 2025</em></p> -->
+            <div class="pub-meta-row">
+              <span class="pub-number"></span>
+              <span class="pub-status-label">In Preparation</span>
+              <!-- <span class="pub-status-label">25%</span> -->
+              <!-- <span><a class="link" href="https://doi.org/" target="_blank" rel="noopener">DOI</a></span> -->
+              <!-- <span><a class="link" href="assets/Papers/.pdf">PDF</a></span> -->
+              <!-- <span><a class="link" href="https://" target="_blank" rel="noopener">Presentation</a></span> -->
+              <!-- <span class="pub-status-label">Demo</span> -->
+              <!-- <span class="pub-status-label">Source Code</span> -->
+            </div>
+          </div>
+        </li>
+        <!-- #10 -->
+        <li class="card pub-card" data-type="inProgress" data-topic="force-pressure" data-year="2026">
+          <div class="pub-thumb">
+            <img src="assets/PaperThumbnails/Hexaco.jpg" alt="" loading="lazy">
+          </div>          
+          <div class="pub-body">
+            <h3>PentaForce: Novel Force based Input Technique using Five Fingers</h3>
+            <!-- <p class="hint" style="margin-bottom:0.5rem;"><b>Jannatul Ferdous Srabonee</b>, Ohoud Mosa Alharbi, Wolfgang Stuerzlinger, &amp; Ahmed Arif. <br>— <em>ACM CHI 2025</em></p> -->
+            <div class="pub-meta-row">
+              <span class="pub-number"></span>
+              <span class="pub-status-label">In Preparation</span>
+              <!-- <span class="pub-status-label">25%</span> -->
+              <!-- <span><a class="link" href="https://doi.org/" target="_blank" rel="noopener">DOI</a></span> -->
+              <!-- <span><a class="link" href="assets/Papers/.pdf">PDF</a></span> -->
+              <!-- <span><a class="link" href="https://" target="_blank" rel="noopener">Presentation</a></span> -->
+              <!-- <span class="pub-status-label">Demo</span> -->
+              <!-- <span class="pub-status-label">Source Code</span> -->
+            </div>
+          </div>
+        </li>
+        <!-- #11 -->
+        <li class="card pub-card" data-type="inProgress" data-topic="bci" data-year="2026">
+          <div class="pub-thumb">
+            <img src="assets/PaperThumbnails/Hexaco.jpg" alt="" loading="lazy">
+          </div>          
+          <div class="pub-body">
+            <h3>A Systematic Review on Various Motor Imagery Tasks used In Brain-Computer Interfaces</h3>
+            <!-- <p class="hint" style="margin-bottom:0.5rem;"><b>Jannatul Ferdous Srabonee</b>, Ohoud Mosa Alharbi, Wolfgang Stuerzlinger, &amp; Ahmed Arif. <br>— <em>ACM CHI 2025</em></p> -->
+            <div class="pub-meta-row">
+              <span class="pub-number"></span>
+              <span class="pub-status-label">In Preparation</span>
+              <!-- <span class="pub-status-label">25%</span> -->
+              <!-- <span><a class="link" href="https://doi.org/" target="_blank" rel="noopener">DOI</a></span> -->
+              <!-- <span><a class="link" href="assets/Papers/.pdf">PDF</a></span> -->
+              <!-- <span><a class="link" href="https://" target="_blank" rel="noopener">Presentation</a></span> -->
+              <!-- <span class="pub-status-label">Demo</span> -->
+              <!-- <span class="pub-status-label">Source Code</span> -->
+            </div>
+          </div>
+        </li> 
+        
+        <!-- <li class="card pub-card" data-type="" data-topic="" data-year="">
+          <div class="pub-thumb">
+            <img src="assets/PaperThumbnails/" alt="" loading="lazy">
+          </div>          
+          <div class="pub-body">
+            <h3></h3>
+            <p class="hint" style="margin-bottom:0.5rem;"> <b>Jannatul Ferdous Srabonee</b>&amp; Advisor. <br>— <em>Publisher</em></p>
+            <div class="pub-meta-row">
+              <span class="pub-number"></span>
+              <span class="pub-status-label">Status</span>
+              <span class="pub-status-label">Acceptance Rate</span>
+              <span><a class="link" href="https://doi.org/" target="_blank" rel="noopener">DOI</a></span>
+              <span><a class="link" href="assets/Papers/.pdf">PDF</a></span>
+              <span><a class="link" href="https://" target="_blank" rel="noopener">Presentation</a></span>
+              <span class="pub-status-label">Demo</span>
+              <span class="pub-status-label">Source Code</span>
+            </div>
+          </div>
+        </li>      -->
+
+      </ul>
+      <p id="pub-empty-state" class="hint" hidden>No publications match the selected filters. Try selecting "All" on one of the filter rows above.</p>
+    </div>
+  </main>
+</div>
+
+<div id="input-mode-badge" aria-hidden="true">
+  <span class="dot"></span>
+  <span id="input-mode-label">Input: Mouse</span>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
