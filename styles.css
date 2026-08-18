@@ -694,6 +694,12 @@ button.filter-chip--topic[aria-pressed="true"] {
   /* color: var(--color-accent-ink); */
 }
 
+.pub-meta-row a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+}
+
 .pub-meta-row > span:not(:first-child)::before {
   content: "/";
   margin-right: 0.6rem;
