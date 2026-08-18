@@ -25,6 +25,30 @@
 })();
 
 // =========================================================
+// NEWS LIST: sort entries newest-first by parsing "Mon YYYY" dates
+// =========================================================
+(function sortNewsList() {
+  const list = document.querySelector('.news-list');
+  if (!list) return;
+
+  const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+
+  function parseDate(text) {
+    const match = text.trim().toLowerCase().match(/([a-z]{3})[a-z]*\.?\s+(\d{4})/);
+    if (!match) return -Infinity;
+    const monthIndex = months.indexOf(match[1]);
+    const year = parseInt(match[2], 10);
+    return year * 12 + (monthIndex === -1 ? 0 : monthIndex);
+  }
+
+  const items = Array.from(list.children);
+  items
+    .map((item) => ({ item, key: parseDate(item.querySelector('.news-date')?.textContent || '') }))
+    .sort((a, b) => b.key - a.key)
+    .forEach(({ item }) => list.appendChild(item));
+})();
+
+// =========================================================
 // CHART / TABLE TOGGLE (data always available as an accessible table;
 // the "chart" view is a progressive enhancement, never the only source)
 // =========================================================
@@ -184,12 +208,12 @@
     // hiding under review and in progress papers
     if (status) {
       status.textContent = `Acceptance rates are provided when available.`;
-      // const total = cards.length;
-      // if (visibleCount === total) {
-      //   status.textContent = `Showing all ${total} publications. Acceptance rates are provided when available.`;
-      // } else {
-      //   status.textContent = `Showing ${visibleCount} of ${total} publications. Acceptance rates are provided when available.`;
-      // }
+    //   // const total = cards.length;
+    //   // if (visibleCount === total) {
+    //   //   status.textContent = `Showing all ${total} publications. Acceptance rates are provided when available.`;
+    //   // } else {
+    //   //   status.textContent = `Showing ${visibleCount} of ${total} publications. Acceptance rates are provided when available.`;
+    //   // }
     }
 
     reorderAndNumber();

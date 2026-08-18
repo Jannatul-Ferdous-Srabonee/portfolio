@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Limelight');
+
+    text {
+      font-family: 'Limelight', sans-serif;
+      font-size: 60px;
+      fill: rgb(102, 0, 0);
+      dominant-baseline: middle;
+      text-anchor: middle;
+    }
+  </style>
+
+  <!-- Background rounded square -->
+  <rect x="0" y="0" width="80" height="80" rx="12" ry="12" fill="#F7F5EF"/>
+
+  <!-- Centered JS text -->
+  <text x="40" y="45">JS</text>
+</svg>
