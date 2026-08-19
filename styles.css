@@ -676,7 +676,9 @@ button.filter-chip--topic[aria-pressed="true"] {
 }
 .pub-title-link:hover,
 .pub-title-link:focus-visible {
-  border-bottom-color: currentColor;
+  /* border-bottom-color: currentColor; */
+  text-decoration: none;
+  color: var(--color-ink-soft);
 }
 
 .pub-meta-row {
