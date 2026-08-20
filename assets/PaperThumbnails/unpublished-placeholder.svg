@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" rx="12" fill="#f3ede1"/>
+
+  <!-- app/window frame -->
+  <rect x="90" y="70" width="220" height="150" rx="10" fill="none" stroke="#630903" stroke-width="4"/>
+  <!-- window title bar -->
+  <line x1="90" y1="102" x2="310" y2="102" stroke="#630903" stroke-width="3"/>
+  <circle cx="108" cy="86" r="5" fill="none" stroke="#630903" stroke-width="2.5"/>
+  <circle cx="126" cy="86" r="5" fill="none" stroke="#630903" stroke-width="2.5"/>
+  <circle cx="144" cy="86" r="5" fill="none" stroke="#630903" stroke-width="2.5"/>
+
+  <!-- draft content lines (unfinished / sparse, to read as "in progress") -->
+  <rect x="112" y="122" width="120" height="9" rx="3" fill="#630903" opacity="0.55"/>
+  <rect x="112" y="142" width="150" height="9" rx="3" fill="#630903" opacity="0.35"/>
+  <rect x="112" y="162" width="70" height="9" rx="3" fill="#630903" opacity="0.2"/>
+
+  <!-- pending ellipsis -->
+  <circle cx="112" cy="196" r="5" fill="#a8672f"/>
+  <circle cx="132" cy="196" r="5" fill="#a8672f" opacity="0.7"/>
+  <circle cx="152" cy="196" r="5" fill="#a8672f" opacity="0.4"/>
+
+  <!-- cursor, interacting with the window (HCI motif) -->
+  <path d="M255 155l60 34-24 6-4 24z" fill="#630903" stroke="#630903" stroke-width="2" stroke-linejoin="round"/>
+</svg>
