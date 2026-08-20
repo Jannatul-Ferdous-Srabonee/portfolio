@@ -895,6 +895,45 @@ button.filter-chip--topic[aria-pressed="true"] {
 }
 /* for publications page end*/
 
+/* For posters */
+.poster-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.poster-list li {
+  display: grid;
+  grid-template-columns: 1.1rem 1fr;
+  column-gap: 0.5rem;
+  margin-bottom: var(--space-3);
+}
+
+.poster-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  color: var(--color-accent-ink);
+  grid-row: 1;
+  align-self: start;
+  margin-top: 0.2rem;
+}
+
+.poster-text p {
+  margin: 0 0 0.25rem;
+}
+
+.poster-list .hint {
+  margin: 0;
+}
+.venue-line {
+  white-space: nowrap;
+  overflow-x: none;
+  display: inline-block;
+  max-width: 100%;
+}
+
+/* Posters end */
+
 .btn {
   display: inline-flex;
   align-items: center;

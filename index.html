@@ -218,27 +218,27 @@
             <button class="chip filter-chip filter-chip--type" data-filter-value="conference">Paper</button>
             <button class="chip filter-chip filter-chip--type" data-filter-value="journal">Journal</button>
             <button class="chip filter-chip filter-chip--type" data-filter-value="book">Chapter</button>
-            <!-- <button class="chip filter-chip filter-chip--type" data-filter-value="underReview">Under Review</button>
-            <button class="chip filter-chip filter-chip--type" data-filter-value="inProgress">In Progress</button> -->
+            <button class="chip filter-chip filter-chip--type" data-filter-value="underReview">Under Review</button>
+            <!-- <button class="chip filter-chip filter-chip--type" data-filter-value="inProgress">In Progress</button> -->
           </div>
         </fieldset>
 
         <fieldset class="filter-group" data-filter-type="topic">
           <legend class="visually-hidden">Filter by topic</legend>
           <div class="tag-row" role="group" aria-label="Topic">
-            <button class="chip filter-chip filter-chip--topic" data-filter-value="all" aria-pressed="true">All</button>
-            <button class="chip filter-chip filter-chip--topic" data-filter-value="bci">EEG</button>
-            <button class="chip filter-chip filter-chip--topic" data-filter-value="accessibility">Accessibility</button>
-            <button class="chip filter-chip filter-chip--topic" data-filter-value="ai-ml">AI/ML</button>
-            <button class="chip filter-chip filter-chip--topic" data-filter-value="eye-tracking">Eye Tracking</button>
-            <button class="chip filter-chip filter-chip--topic" data-filter-value="gesture-mapping">Gesture Mapping</button>
-            <!-- <button class="chip filter-chip filter-chip--topic" data-filter-value="force-pressure">Force/Pressure-Based</button> -->
-            <!-- <button class="chip filter-chip filter-chip--topic" data-filter-value="haptics">Haptics</button> -->
-            <button class="chip filter-chip filter-chip--topic" data-filter-value="personality">Personality</button>
-            <!-- <button class="chip filter-chip filter-chip--topic" data-filter-value="silent-speech">Silent Speech</button> -->
-            <!-- <button class="chip filter-chip filter-chip--topic" data-filter-value="telepresence">Telepresence</button> -->
+            <button class="chip filter-chip filter-chip--topic" data-filter-value="all" aria-pressed="true">All</button>            
+            <button class="chip filter-chip filter-chip--topic" data-filter-value="eye-tracking">Eye-Tracking</button>
+            <button class="chip filter-chip filter-chip--topic" data-filter-value="gesture-mapping">Gesture-based</button>
             <button class="chip filter-chip filter-chip--topic" data-filter-value="text-composition">Text Composition</button>
             <button class="chip filter-chip filter-chip--topic" data-filter-value="text-entry">Text Entry</button>
+            <button class="chip filter-chip filter-chip--topic" data-filter-value="personality">Personality</button>                  
+            <button class="chip filter-chip filter-chip--topic" data-filter-value="ai-ml">AI/ML</button>  
+            <button class="chip filter-chip filter-chip--topic" data-filter-value="accessibility">Accessibility</button> 
+            <button class="chip filter-chip filter-chip--topic" data-filter-value="bci">EEG</button>         
+            <!-- <button class="chip filter-chip filter-chip--topic" data-filter-value="force-pressure">Force/Pressure-Based</button> -->
+            <!-- <button class="chip filter-chip filter-chip--topic" data-filter-value="haptics">Haptics</button> -->            
+            <!-- <button class="chip filter-chip filter-chip--topic" data-filter-value="silent-speech">Silent Speech</button> -->
+            <!-- <button class="chip filter-chip filter-chip--topic" data-filter-value="telepresence">Telepresence</button> -->            
           </div>
         </fieldset>
       </div>
@@ -489,8 +489,102 @@
       </ul>
       <p id="pub-empty-state" class="hint" hidden>No publications match the selected filters. Try selecting "All" on one of the filter rows above.</p>
 
-      <!-- <h2 style="margin-top: var(--space-5);">News</h2>
-      <p>Postdoctoral researcher studying screen-reader navigation efficiency in data-dense interfaces, and collaborating with two accessibility teams on component-level design guidance. Open to research scientist and UX research roles.</p> -->
+      <h2 id="posters" style="margin-top: var(--space-5); text-align: center;">Posters &amp; Presentations</h2>
+      <ul class="poster-list">
+        <li>
+          <img class="poster-icon" src="assets/poster.svg" alt="" />
+          <div class="poster-text">
+            <h3>AI in Accessibility</h3>
+            <p class="hint"><b>Jannatul Ferdous Srabonee</b><br>
+              <span class="venue-line">— <em><a class="link" href="https://engineering.ucmerced.edu/industry_day/" target="_blank" rel="noopener">Industry Day, Research Week, 2026, UC Merced</a></em></span>
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <img class="poster-icon" src="assets/poster.svg" alt="" />
+          <div class="poster-text">
+            <h3>EEG-based Major Depressive Disorder (MDD) Identification through Functional Connectivity Analysis</h3>
+            <p class="hint"><b>Jannatul Ferdous Srabonee</b><br>
+             <span class="venue-line">— <em><a class="link" href="https://www.humanbrainproject.eu/en/education/ebrains-workshops/basses/" target="_blank" rel="noopener">EBRAINS Workshop: Brain Activity across Scales and Species: analysis of experiments and Simulations, 2022, Rome, Italy</a> [Virtual]</em></span>
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <img class="poster-icon" src="assets/poster.svg" alt="" />
+          <div class="poster-text">
+            <h3>Exploring the Impacts of HEXACO Personality Traits on Text Composition and Transcription</h3>
+            <p class="hint"><b>Jannatul Ferdous Srabonee</b><br>
+             <span class="venue-line">— <em><a class="link" href="https://chi2025.acm.org/" target="_blank" rel="noopener">CHI 2025, Yokohama, Japan</a></em></span>
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <img class="poster-icon" src="assets/poster.svg" alt="" />
+          <div class="poster-text">
+            <h3>A Machine Learning Based Depression Screening Tool from EEG Data to Aid Clinicians</h3>
+            <p class="hint"><b>Jannatul Ferdous Srabonee</b>, Umima Afifa<br>
+             <span class="venue-line">— <em><a class="link" href="https://bnia.basis.org.bd/" target="_blank" rel="noopener">Bangladesh Association of Software Information Services (BASIS) National ICT Awards, 2022 Dhaka, Bangladesh</a></em></span>
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <img class="poster-icon" src="assets/poster.svg" alt="" />
+          <div class="poster-text">
+            <h3>Machine Learning Based Depression Screening Tool from EEG Data to Aid Clinicians</h3>
+            <p class="hint"><b>Jannatul Ferdous Srabonee</b><br>
+             <span class="venue-line">— <em>International Conference on 4IR (4th Industrial Revolution) for the Emerging Future, 2022, Dhaka, Bangladesh</em></span>
+            </p>
+          </div>
+        </li>
+
+        
+        <li>
+          <img class="poster-icon" src="assets/poster.svg" alt="" />
+          <div class="poster-text">
+            <h3>COVID-19 Defense System</h3>
+            <p class="hint"><b>Jannatul Ferdous Srabonee</b><br>
+             <span class="venue-line">— <em><a class="link" href="https://ieeeyesist12.github.io/IEEEYESIST12-FrontEnd/index.html" target="_blank" rel="noopener">IEEE YESIST12 Maker Fair, 2021</a></em></span>
+            </p>
+          </div>
+        </li>
+
+        
+        <li>
+          <img class="poster-icon" src="assets/poster.svg" alt="" />
+          <div class="poster-text">
+            <h3>Mobile App for Post COVID-19 Measures</h3>
+            <p class="hint"><b>Jannatul Ferdous Srabonee</b><br>
+             <span class="venue-line">— <em><a class="link" href="https://2021.spaceappschallenge.org/" target="_blank" rel="noopener">NASA Space Apps Challenge, 2021</a></em></span>
+            </p>
+          </div>
+        </li>
+        
+        <li>
+          <img class="poster-icon" src="assets/poster.svg" alt="" />
+          <div class="poster-text">
+            <h3>Alcoholism Detection from 2D Transformed EEG Signal</h3>
+            <p class="hint"><b>Jannatul Ferdous Srabonee</b><br>
+             <span class="venue-line">— <em><a class="link" href="https://link.springer.com/book/10.1007/978-981-16-0586-4/" target="_blank" rel="noopener">International Joint Conference on Advances in Computational Intelligence, 2020</a> [Virtual]</em></span>
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <img class="poster-icon" src="assets/poster.svg" alt="" />
+          <div class="poster-text">
+            <h3>EEG Based Autism Detection Using CNN Through Correlation Based Transformation of Channels’ Data</h3>
+            <p class="hint"><b>Jannatul Ferdous Srabonee</b><br>
+             <span class="venue-line">— <em><a class="link" href="https://ieeexplore.ieee.org/xpl/conhome/9230456/proceeding" target="_blank" rel="noopener">IEEE Region 10 Symposium, 2020</a> [Virtual]</em></span>
+            </p>
+          </div>
+        </li>
+
+      </ul>
+
 
       <footer class="site-footer">
         <p>Copyright &copy; 2026 Jannatul Ferdous Srabonee</p>
