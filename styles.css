@@ -70,7 +70,7 @@ p { margin: 0 0 var(--space-2); max-width: 68ch; }
 .eyebrow {
   font-family: var(--font-mono);
   /* font-size: 0.75rem; */
-  font-size: 1rem;
+  font-size: .8rem;
   /* letter-spacing: 0.08em; */
   /* text-transform: uppercase; */
   color: var(--color-ink);
@@ -164,24 +164,66 @@ body.mode-keyboard #input-mode-badge .dot { background: var(--color-accent); box
   min-height: 100vh;
 }
 
-.sidebar {
-  position: sticky;
-  top: 0;
-  z-index: 80;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: var(--space-3);
-  padding: var(--space-2) var(--space-4);
-  background: rgba(247, 245, 239, 0.95);
+/* =========================================================
+   FLOATING NAV (top-right pill)
+   ========================================================= */
+.floating-nav {
+  position: fixed;
+  top: var(--space-2);
+  right: var(--space-3);
+  z-index: 90;
+  background: rgba(247, 245, 239, 0.9);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--color-line);
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 0.4rem 0.5rem;
 }
 
+.floating-nav .nav-list {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
+.floating-nav .nav-list a {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-ink-soft);
+  text-decoration: none;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.floating-nav .nav-list a:hover {
+  background: var(--color-amber-bg);
+  color: var(--color-ink);
+}
+
+.floating-nav .nav-list a[aria-current="page"] {
+  background: var(--color-accent-ink);
+  color: var(--color-paper);
+}
+
+@media (max-width: 640px) {
+  .floating-nav {
+    top: var(--space-1);
+    right: var(--space-1);
+    padding: 0.3rem 0.4rem;
+  }
+  .floating-nav .nav-list a {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.72rem;
+  }
+}
 
 /* Horizontal nav container in the top bar */
-.nav-list {
+/* .nav-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -190,10 +232,10 @@ body.mode-keyboard #input-mode-badge .dot { background: var(--color-accent); box
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 0.35rem;
-}
+} */
 
 /* Base nav link styling and positioning context for the underline */
-.nav-list a {
+/* .nav-list a {
   display: block;
   position: relative;
   padding: 0.45rem 0.7rem;
@@ -201,10 +243,10 @@ body.mode-keyboard #input-mode-badge .dot { background: var(--color-accent); box
   color: var(--color-ink);
   text-decoration: none;
   font-size: 0.88rem;
-}
+} */
 
 /* Animated underline (hidden by default, revealed on hover/focus/current page) */
-.nav-list a::after {
+/* .nav-list a::after {
   content: "";
   position: absolute;
   left: 0.7rem;
@@ -215,20 +257,20 @@ body.mode-keyboard #input-mode-badge .dot { background: var(--color-accent); box
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 180ms ease;
-}
+} */
 
 /* Show the underline for hover, keyboard focus, and active page */
-.nav-list a:hover::after,
+/* .nav-list a:hover::after,
 .nav-list a:focus-visible::after,
 .nav-list a[aria-current="page"]::after {
   transform: scaleX(1);
-}
+} */
 
 /* Active page tab styling */
-.nav-list a[aria-current="page"] {
+/* .nav-list a[aria-current="page"] {
   color: var(--color-accent-ink);
   font-weight: 600;
-}
+} */
 
 .sidebar__meta {
   display: flex;
@@ -431,9 +473,15 @@ body.mode-keyboard #input-mode-badge .dot { background: var(--color-accent); box
 main {
   padding: var(--space-4) var(--space-4) var(--space-6);
 }
+/* .content {
+  max-width: var(--content-max);
+  margin: 0 auto;
+} */
+
 .content {
   max-width: var(--content-max);
   margin: 0 auto;
+  padding-top: calc(var(--nav-offset) + var(--space-2));
 }
 
 .hero {
