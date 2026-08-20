@@ -182,9 +182,9 @@
         cardTopics.some((t) => selectedTopics.has(t));
       
       // not hiding under review and in progress papers
-      // const publishedMatch = !isDefaultAllAll || card.dataset.published === 'true';
+      const publishedMatch = !isDefaultAllAll || card.dataset.published === 'true';
       // hiding under review and in progress papers
-      const publishedMatch = card.dataset.published === 'true';
+      // const publishedMatch = card.dataset.published === 'true';
 
       const visible = typeMatch && topicMatch && publishedMatch;
       card.hidden = !visible;
@@ -194,27 +194,29 @@
     if (emptyState) emptyState.hidden = visibleCount !== 0;
 
     // not hiding under review and in progress papers
-    // if (status) {
-    //   const total = cards.length;
-    //   if (isDefaultAllAll) {
-    //     status.textContent = `Showing published/accepted works only. Acceptance rates are provided when available.`;
-    //   } else if (visibleCount === total) {
-    //     status.textContent = `Showing all ${total} publications. Acceptance rates are provided when available.`;
-    //   } else {
-    //     status.textContent = `Showing ${visibleCount} of ${total} publications. Acceptance rates are provided when available.`;
-    //   }
-    // }
+    if (status) {
+      const total = cards.length;
+      if (isDefaultAllAll) {
+        status.textContent = `Showing published/accepted works only. Acceptance rates are provided when available.`;
+      } else if (visibleCount === total) {
+        // status.textContent = `Showing all ${total} publications. Acceptance rates are provided when available.`;
+        status.textContent = `Acceptance rates are provided when available.`;
+      } else {
+        // status.textContent = `Showing ${visibleCount} of ${total} publications. Acceptance rates are provided when available.`;
+        status.textContent = `Acceptance rates are provided when available.`;
+      }
+    }
 
     // hiding under review and in progress papers
-    if (status) {
-      status.textContent = `Acceptance rates are provided when available.`;
+    // if (status) {
+    //   status.textContent = `Acceptance rates are provided when available.`;
     //   // const total = cards.length;
     //   // if (visibleCount === total) {
     //   //   status.textContent = `Showing all ${total} publications. Acceptance rates are provided when available.`;
     //   // } else {
     //   //   status.textContent = `Showing ${visibleCount} of ${total} publications. Acceptance rates are provided when available.`;
     //   // }
-    }
+    // }
 
     reorderAndNumber();
   }
