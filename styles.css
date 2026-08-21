@@ -9,7 +9,8 @@
   --color-line: #DCD8CC;
   --color-accent: #2454FF;      /* signal blue — used for focus + keyboard mode */
   --color-accent-ink: #630903;  
-  --color-amber: #B5651D;       /* secondary accent for tags/eyebrows (contrast-safe on paper) */
+  /* --color-amber: #B5651D;       secondary accent for tags/eyebrows (contrast-safe on paper) */
+  --color-amber: #BD4749;
   --color-amber-bg: #F1E3D2;
 
   /* --font-display: "Fraunces", Georgia, serif;
