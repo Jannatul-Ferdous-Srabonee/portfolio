@@ -1088,6 +1088,7 @@ footer.site-footer p {
   padding: 0;
   /* max-height: 280px; */
   max-height: 350px;
+  border-bottom: 1px solid var(--color-line);
   overflow-y: auto;
 }
 
