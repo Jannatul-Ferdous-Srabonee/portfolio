@@ -285,7 +285,8 @@
               <!-- <span><a class="link" href="https://doi.org/" target="_blank" rel="noopener">DOI</a></span> -->
               <span><a class="link" href="assets/Papers/Bustoni_MobileHCI2026_BezelBraille.pdf" style="font-weight: bold;"><img class="email-icon" src="assets/pdf-icon.svg" alt="" aria-hidden="true">PDF</a></span>
               <!-- <span><a class="link" href="https://" target="_blank" rel="noopener">Presentation</a></span> -->
-              <span><a class="link" href="assets/Papers/BezelBraille_CHI2026_compressed.mp4" target="_blank" rel="noopener" style="font-weight: bold;"><img class="email-icon" src="assets/video-icon.svg" alt="" aria-hidden="true">Demo</a></span>
+              <!-- <span><a class="link" href="https://drive.google.com/file/d/1vHLD7sIc_VZdH_vxjqxwQ-mumJoBWyDt/view?usp=sharing" target="_blank" rel="noopener" style="font-weight: bold;"><img class="email-icon" src="assets/video-icon.svg" alt="" aria-hidden="true">Demo</a></span> -->
+              <span><a class="link" href="#" onclick="openVideoModal(event)" style="font-weight: bold;"><img class="email-icon" src="assets/video-icon.svg" alt="" aria-hidden="true">Demo</a></span>
               <!-- <span class="pub-status-label">Source Code</span> -->
             </div>
           </div>
@@ -510,6 +511,21 @@
         </li>      -->
 
       </ul>
+
+      <!-- Video Modal -->
+      <div id="videoModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; align-items: center; justify-content: center;">
+        <div style="position: relative; width: 90%; max-width: 900px;">
+          <button onclick="closeVideoModal()" style="position: absolute; top: -40px; right: 0; background: none; border: none; color: white; font-size: 24px; cursor: pointer; z-index: 1001;">✕</button>
+          <iframe 
+            src="https://drive.google.com/file/d/1vHLD7sIc_VZdH_vxjqxwQ-mumJoBWyDt/preview" 
+            width="100%" 
+            height="500" 
+            allow="autoplay"
+            style="border: none;">
+          </iframe>
+        </div>
+      </div>
+
       <p id="pub-empty-state" class="hint" hidden>No publications match the selected filters. Try selecting "All" on one of the filter rows above.</p>
 
       <h2 id="posters" 

@@ -355,3 +355,18 @@
   audio.addEventListener('pause', () => { btn.setAttribute('aria-pressed', 'false'); clearHighlight(); });
   audio.addEventListener('ended', () => { btn.setAttribute('aria-pressed', 'false'); clearHighlight(); });
 })();
+
+// Video Modal Controls
+function openVideoModal(e) {
+  e.preventDefault();
+  document.getElementById('videoModal').style.display = 'flex';
+}
+function closeVideoModal() {
+  document.getElementById('videoModal').style.display = 'none';
+  // Stop the video by reloading the iframe
+  const iframe = document.querySelector('#videoModal iframe');
+  iframe.src = iframe.src;
+}
+document.getElementById('videoModal').onclick = function(e) {
+  if (e.target === this) closeVideoModal();
+}
