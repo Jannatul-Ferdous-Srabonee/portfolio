@@ -1,80 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jannatul Ferdous Srabonee — HCI Researcher</title>
-<meta name="description" content="Portfolio of Jannatul Ferdous Srabonee, an HCI researcher specializing in inclusive interaction design.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<!-- <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"> -->
-<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&family=Lexend:wght@400;500;600&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jannatul Ferdous Srabonee — HCI Researcher | About, Publications, Posters</title>
+  
+  <meta name="description" content="Portfolio of Jannatul Ferdous Srabonee, an HCI researcher specializing in inclusive interaction design.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&family=Lexend:wght@400;500;600&family=Atkinson+Hyperlegible+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<link rel="icon" type="image/svg+xml" href="assets/favicon.png">
-<link rel="stylesheet" href="styles.css">
+  <!-- Aboreto Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
+
+  <!-- tab_icon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.png">
+
+  <link rel="stylesheet" href="styles_2.css">
+  <script src="script_2.js" defer></script>
 </head>
 <body>
-<a class="skip-link" href="#main-content">Skip to main content</a>
-<!-- <nav class="floating-nav" aria-label="Primary">
-  <ul class="nav-list">
-    <li><a href="#home" aria-current="page">Home</a></li>
-    <li><a href="#publications">Publications</a></li>
-  </ul>
-</nav> -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<div class="site">
+  <header>
+    <!-- Main navigation -->
+    <nav role="navigation" aria-label="Main navigation">     
+      <ul>
+        <li><a href="#about" aria-current="page">About Me</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#posters">Posters</a></li>
+        <li><a href="assets/CV.pdf" aria-label="Download my CV">CV</a></li>
+        <!-- <li><a href="#projects">Projects</a></li> -->
+      </ul>    
+    </nav>
+    <span>      
+      <!-- Social Media Links --> 
+      <a class="social-icon-link" href="https://www.linkedin.com/in/jannatul-ferdous-srabonee/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <img class="social-icon" src="assets/icon_linkIn.svg" alt="">
+      </a>         
+      <a class="social-icon-link" href="https://github.com/Jannatul-Ferdous-Srabonee" target="_blank" rel="noopener" aria-label="GitHub">
+        <img class="social-icon" src="assets/icon_github_.svg" alt="">
+      </a>
+      <a class="social-icon-link" href="https://scholar.google.com/citations?user=H9CizIwAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <img class="social-icon" src="assets/icon_googleScholar.svg" alt="">
+      </a>            
+      <a class="social-icon-link" href="https://www.researchgate.net/profile/Jannatul-Srabonee?ev=hdr_xprf" target="_blank" rel="noopener" aria-label="ResearchGate">
+        <img class="social-icon" src="assets/icon_researchGate.svg" alt="">
+      </a>      
+      <button class="theme-button" id="theme-toggle" aria-label="Dark Mode" data-tooltip="Dark Mode">
+        <img class="social-icon theme-icon" src="assets/dark_mode_icon.svg" alt="">
+      </button>
+    </span>
+  </header>
+
   <main id="main-content">
-    <div class="content">
-      <section class="hero" id="home">
+    <!-- About Section -->
+    <section id="about"> 
+      <!-- About Me Column  -->
+      <div class="about-me-col">
+        <div class="name-container">
+          <div class="initials-container">
+            <span class="first-letter">J</span><span>S</span>
+          </div>
+          <div class="name">
+            <h1 class="name-with-pronunciation">Jannatul Ferdous Srabonee</h1>
+            <span class="pronounce-respelling">
+              <span class="syl" data-syl="0">Jan</span>-<span class="syl" data-syl="1">na</span>-<span class="syl" data-syl="2">tul</span>
+              <span class="syl" data-syl="3">fer</span>-<span class="syl" data-syl="4">dous</span>
+              <span class="syl" data-syl="5">SRA</span>-<span class="syl" data-syl="6">boh</span>-<span class="syl" data-syl="7">nee</span>
+              <span class="pronounce-tooltip-wrap">
+                <button type="button"
+                        class="pronounce-btn"
+                        id="pronounce-btn"
+                        aria-describedby="pronounce-tooltip"
+                        aria-label="Play pronunciation of my name">
+                  <svg class="pronounce-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M4 9v6h4l5 5V4L8 9H4z"/>
+                    <path d="M16.5 8.5a5 5 0 0 1 0 7"/>
+                    <path d="M19 6a8.5 8.5 0 0 1 0 12"/>
+                  </svg>
+                </button>
+                <span class="pronounce-tooltip" role="tooltip" id="pronounce-tooltip">Pronunciation of my name</span>
+              </span>
+              <audio id="name-audio" preload="none" src="assets/name-pronunciation.mp3"></audio>
+            </span> 
+          </div>
+        </div>
+      
+        <p align="justify">
+          I am a PhD candidate in Electrical Engineering and Computer Science at the 
+          <a class="link" href="https://www.ucmerced.edu/"><b>University of California, Merced</b></a>, where I conduct
+          research in the <a class="link" href="https://www.theiilab.com/"><b>Inclusive Interaction Lab</b></a> advised by Dr. Ahmed Arif. 
+          I completed my BSc in Computer Science and Engineering from Khulna University of Engineering & Technology, Bangladesh.
+        </p>
+        <p align="justify">
+          My research focuses on designing and developing <b class="brush-text">inclusive input and interaction techniques</b> for digital systems. My current 
+          work spans <b>gesture-based techniques, eye-tracking, applied artificial intelligence (AI), and brain-computer interfaces (BCIs)</b>, particularly for 
+          individuals with motor and vision impairments. Beyond these, I actively look to other domains for inspiration and translate 
+          what I find into new tools in pursuit of more inclusive interaction.
+        </p>
+        <p align="justify">
+          One of my earlier research projects on the development of an EEG‑based depression screening system, received national recognition with the
+          <a class="link" href="https://bnia.basis.org.bd/"><b>BASIS National ICT Winner Award</b></a>. Alongside this, my work has been published and accepted at premier Human-Computer Interaction venues including 
+          <b>ACM CHI</b> and <b>MobileHCI</b>, as well as in Scopus-indexed peer‑reviewed journals.
+        </p> 
+      </div>
+      <!-- Headshot Section -->
+      <div class="about-headshot">
         <figure class="hero__headshot">
           <img src="assets/headshot.png" alt="Portrait of Jannatul Ferdous Srabonee">
-        </figure>
-
-        <div class="hero__copy">
-          <h1 class="name-with-pronunciation"> Jannatul Ferdous Srabonee</h1>
-          <span class="pronounce-respelling">
-            <span class="syl" data-syl="0">Jan</span>-<span class="syl" data-syl="1">na</span>-<span class="syl" data-syl="2">tul</span>
-            <span class="syl" data-syl="3">fer</span>-<span class="syl" data-syl="4">dous</span>
-            <span class="syl" data-syl="5">SRA</span>-<span class="syl" data-syl="6">boh</span>-<span class="syl" data-syl="7">nee</span>
-            <span class="pronounce-tooltip-wrap">
-              <button type="button"
-                      class="pronounce-btn"
-                      id="pronounce-btn"
-                      aria-describedby="pronounce-tooltip"
-                      aria-label="Play pronunciation of my name">
-                <svg class="pronounce-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <path d="M4 9v6h4l5 5V4L8 9H4z"/>
-                  <path d="M16.5 8.5a5 5 0 0 1 0 7"/>
-                  <path d="M19 6a8.5 8.5 0 0 1 0 12"/>
-                </svg>
-              </button>
-              <span class="pronounce-tooltip" role="tooltip" id="pronounce-tooltip">Pronunciation of my name</span>
-            </span>
-            <audio id="name-audio" preload="none" src="assets/name-pronunciation.mp3"></audio>
-          </span>
-          <div class="sidebar__meta">    
-            <a class="social-icon-link" href="https://orcid.org/0000-0003-3605-6586" target="_blank" rel="noopener" aria-label="ORCID">
-              <img class="social-icon" src="assets/orcid-icon.svg" alt="">
-            </a>
-            <a class="social-icon-link" href="https://scholar.google.com/citations?user=H9CizIwAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar">
-              <img class="social-icon" src="assets/google-scholar-icon.svg" alt="">
-            </a>            
-            <a class="social-icon-link" href="https://www.researchgate.net/profile/Jannatul-Srabonee?ev=hdr_xprf" target="_blank" rel="noopener" aria-label="ResearchGate">
-              <img class="social-icon" src="assets/researchgate-icon.svg" alt="">
-            </a>
-            <a class="social-icon-link" href="https://www.linkedin.com/in/jannatul-ferdous-srabonee/" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <img class="social-icon" src="assets/linkedin-icon.svg" alt="">
-            </a>
-          </div>
-          <p class="hero__email"><a href="mailto:jfsrabonee@hotmail.com" aria-label="Click to send an email"><img class="email-icon" src="assets/email-icon.svg" alt="" aria-hidden="true">jfsrabonee@hotmail.com</a></p>
-          <p class="hero__email"><a href="assets/CV.pdf" aria-label="Download my CV"><img class="email-icon" src="assets/pdf-icon.svg" alt="" aria-hidden="true">CV</a></p>
-      
-        </div>        
-      </section>     
-
-      <div class="about-news-grid">
-        <div class="news-col">
-          <!-- <h2 style="margin-top: var(--space-5);">News</h2> -->
-          <p class="eyebrow"><b>News, Talks & Awards</b></p>
+        </figure>   
+        <!-- News Section -->
+        <section class="news-section" aria-labelledby="news-heading">
+          <h2 id="news-heading" class="eyebrow">News, Talks & Awards</h2>
           <ul class="news-list">
             <li>
               <span class="news-date">Jun 2026</span>
@@ -179,37 +218,16 @@
               <span class="news-text">🎓 Started my PhD journey at the <a class="link" href="https://www.ucmerced.edu/">University of California, Merced</a></span>
             </li>
           </ul>
-        </div>
+        </section>
 
-        <div class="about-me-col">      
-          <!-- <h2>About Me</h2> -->
-          <!-- <p>This portfolio is built to WCAG 2.2 AA as a baseline, tested with keyboard-only navigation and a screen reader, 
-            and every data visualization here ships with an inclusive table fallback. The badge in the corner shows, in real time, 
-            whether the site currently thinks you're navigating by mouse or keyboard — try pressing <kbd>Tab</kbd> a few times.</p> -->
-            <p></p>
-            <p align="justify">
-            I am a PhD candidate in Electrical Engineering and Computer Science at the 
-            <a class="link" href="https://www.ucmerced.edu/"><b>University of California, Merced</b></a>, where I conduct
-            research in the <a class="link" href="https://www.theiilab.com/"><b>Inclusive Interaction Lab</b></a> advised by Dr. Ahmed Arif. 
-            I completed my BSc in Computer Science and Engineering from Khulna University of Engineering & Technology, Bangladesh.
-          </p>
-          <p align="justify">
-            My research focuses on designing and developing <span class="brush-text"><b>inclusive input and interaction</b></span><span class="brush-text"><b> techniques</b></span> for digital systems. My current 
-            work spans <b>gesture-based techniques, eye-tracking, applied artificial intelligence (AI), and brain-computer interfaces (BCIs)</b>, particularly for 
-            individuals with motor and vision impairments. Beyond these, I actively look to other domains for inspiration and translate 
-            what I find into new tools in pursuit of more inclusive interaction.
-          </p>
-          <p align="justify">
-            One of my earlier research projects on the development of an EEG‑based depression screening system, received national recognition with the
-            <a class="link" href="https://bnia.basis.org.bd/"><b>BASIS National ICT Winner Award</b></a>. Alongside this, my work has been published and accepted at premier Human-Computer Interaction venues including 
-            <b>ACM CHI</b> and <b>MobileHCI</b>, as well as in Scopus-indexed peer‑reviewed journals.
-          </p>
-        </div>        
       </div>
 
-      <!-- # Publications -->
+    </section>
 
-      <h2 id="publications" style="margin-top: var(--space-5); text-align: center;">Publications</h2>
+    <!-- Publications Section -->
+    <section id="publications">
+      <h1>Publications</h1>
+
       <div class="pub-filters">
         <fieldset class="filter-group" data-filter-type="type">
           <legend class="visually-hidden">Filter by publication type</legend>
@@ -244,273 +262,220 @@
       </div>
 
       <p id="pub-filter-status" role="status" aria-live="polite" class="pub-filter-status"></p>
-
-      <ul class="pub-list" style="list-style:none; padding:0;">
-        <!-- #1 -->
-        <li class="card pub-card" data-type="conference" data-topic="personality text-composition text-entry" data-published="true" data-year="2025">
-          <div class="pub-thumb">
-            <img src="assets/PaperThumbnails/Hexaco.jpg" alt="" loading="lazy">
-          </div>          
-          <div class="pub-body">
-            <h3><a class="pub-title-link" href="https://doi.org/10.1145/3706598.3714149" target="_blank" rel="noopener">Exploring the Impacts of HEXACO Personality Traits on Text Composition and Transcription</a></h3>
-            <p class="hint" style="margin-bottom:0.5rem;"><b>Jannatul Ferdous Srabonee</b>, Ohoud Mosa Alharbi, Wolfgang Stuerzlinger, &amp; Ahmed Arif. <br>— <em>ACM CHI 2025</em></p>
-            <p class="venue-line"style="color: var(--color-ink); font-size:.82rem;">
-              What if your writing style could tell a system about your personality? This study examines how personality traits shape text entry<br>
-              behavior across composition and transcription tasks. By analyzing speed, accuracy, editing effort, and readability, it reveals <br>
-              distinct trait‑specific influences on creative versus mechanical writing.
-            </p>
-            <div class="pub-meta-row">
-              <span class="pub-number"></span>
-              <span class="pub-status-label">Conference Paper</span>
-              <span class="pub-status-label">25%</span>              
-              <span><a class="link" href="assets/Papers/Hexaco_CHI2025.pdf" style="font-weight: bold;"><img class="email-icon" src="assets/pdf-icon.svg" alt="" aria-hidden="true">PDF</a></span>
-              <span><a class="link" href="https://www.youtube.com/watch?si=K_kCUgOpx_G3f9C3&v=KwBMVhAcgn4&feature=youtu.be" target="_blank" rel="noopener" style="font-weight: bold;"><img class="email-icon" src="assets/presentation-icon.svg" alt="" aria-hidden="true">Presentation</a></span>
-              <!-- <span class="pub-status-label">Demo</span> -->
-              <!-- <span class="pub-status-label">Source Code</span> -->
-            </div>
-          </div>
-        </li>
-        <!-- #2 -->
-        <li class="card pub-card" data-type="conference" data-topic="accessibility gesture-mapping text-entry" data-published="true" data-year="2026">
-          <div class="pub-thumb">
-            <img src="assets/PaperThumbnails/MobileHCI2026a.png" alt="" loading="lazy">
-          </div>          
-          <div class="pub-body">
+      
+      <div class="pub-list">
+        <!-- 1 -->
+        <article class="card" data-type="conference" data-topic="accessibility gesture-mapping text-entry" data-published="true" data-year="2026">
+          <figure class="card-thumbnail">
+            <img src="assets/PaperThumbnails/MobileHCI2026a.png" alt="Thumbnail for 'The Role of User Testing in Design Validation' paper">
+          </figure>
+          <div class="card-content">          
             <h3>BezelBraille: A Braille-Inspired Bezel-Guided Virtual Keyboard for Low Vision and Blind Users</h3>
-            <p class="hint" style="margin-bottom:0.5rem;">Isna Alfi Bustoni, <b>Jannatul Ferdous Srabonee</b>, Gulnar Rakhmetulla, &amp; Ahmed Arif.<br>— <em>MobileHCI 2026</em></p>
+            <div class="card-meta">Isna Alfi Bustoni, <b>Jannatul Ferdous Srabonee</b>, Gulnar Rakhmetulla, &amp; Ahmed Arif<br>— <em>MobileHCI 2026</em></div>
             <div class="pub-meta-row">
               <span class="pub-number"></span>
-              <span class="pub-status-label">Conference Paper</span>
+              <span class="pub-status-label">To appear</span>
               <span class="pub-status-label">38%</span>
-              <!-- <span><a class="link" href="https://doi.org/" target="_blank" rel="noopener">DOI</a></span> -->
-              <span><a class="link" href="assets/Papers/Bustoni_MobileHCI2026_BezelBraille.pdf" style="font-weight: bold;"><img class="email-icon" src="assets/pdf-icon.svg" alt="" aria-hidden="true">PDF</a></span>
-              <!-- <span><a class="link" href="https://" target="_blank" rel="noopener">Presentation</a></span> -->
-              <!-- <span><a class="link" href="https://drive.google.com/file/d/1vHLD7sIc_VZdH_vxjqxwQ-mumJoBWyDt/view?usp=sharing" target="_blank" rel="noopener" style="font-weight: bold;"><img class="email-icon" src="assets/video-icon.svg" alt="" aria-hidden="true">Demo</a></span> -->
-              <span><a class="link" href="#" onclick="openVideoModal(event)" style="font-weight: bold;"><img class="email-icon" src="assets/video-icon.svg" alt="" aria-hidden="true">Demo</a></span>
+              <span><a class="link" href="assets/Papers/Bustoni_MobileHCI2026_BezelBraille.pdf" style="font-weight: bold;"><img class="card-icon" src="assets/pdf-icon.svg" alt="" aria-hidden="true">PDF</a></span>
+              <!-- <span><a class="link" href="https://" target="_blank" rel="noopener">Talk</a></span> -->
+              <span><a class="link" href="#" onclick="openVideoModal(event)" style="font-weight: bold;"><img class="card-icon" src="assets/video-icon.svg" alt="" aria-hidden="true">Demo</a></span>
               <!-- <span class="pub-status-label">Source Code</span> -->
-            </div>
-          </div>
-        </li>
-        <!-- #3 -->
-        <li class="card pub-card" data-type="conference" data-topic="bci ai-ml" data-published="true" data-year="2020">
-          <div class="pub-thumb">
-            <img src="assets/PaperThumbnails/EEG_.png" alt="" loading="lazy">
-          </div>          
-          <div class="pub-body">
-            <h3><a class="pub-title-link" href="https://doi.org/10.1109/TENSYMP50017.2020.9230928" target="_blank" rel="noopener">EEG Based Autism Detection Using CNN Through Correlation Based Transformation of Channels' Data</a></h3>
-            <p class="hint" style="margin-bottom:0.5rem;">Zahrul Jannat Peya, MAH Akhand, <b>Jannatul Ferdous Srabonee</b>, &amp; Nazmul Siddique.<br>— <em>IEEE TENSYMP 2020</em></p>
-            <p class="venue-line"style="color: var(--color-ink); font-size:.82rem;">
-              Conventional autism screening depends on questionnaire‑based assessments and multidisciplinary clinical evaluations, processes that<br>
-              are time‑consuming and often yield preliminary insights rather than definitive diagnoses. In contrast, this study demonstrates that <br>
-              autism spectrum disorder can be identified directly from EEG signals, providing a rapid, objective approach.
-            </p>
+              </div>
+          </div>        
+        </article>
+        <!-- 2 -->
+        <article class="card" data-type="conference" data-topic="personality text-composition text-entry" data-published="true" data-year="2025">
+          <figure class="card-thumbnail">
+            <img src="assets/PaperThumbnails/Hexaco.jpg" alt="Thumbnail for 'The Role of User Testing in Design Validation' paper">
+          </figure>
+          <div class="card-content">
+            <h3><a class="pub-title-link" href="https://doi.org/10.1145/3706598.3714149" target="_blank" rel="noopener">Exploring the Impacts of HEXACO Personality Traits on Text Composition and Transcription</a></h3>
+            <div class="card-meta"><b>Jannatul Ferdous Srabonee</b>, Ohoud Mosa Alharbi, Wolfgang Stuerzlinger, &amp; Ahmed Arif. <br>— <em>ACM CHI 2025</em></div>
             <div class="pub-meta-row">
               <span class="pub-number"></span>
               <span class="pub-status-label">Conference Paper</span>
-              <!-- <span class="pub-status-label">25%</span> -->
-              <!-- <span><a class="link" href="https://doi.org/10.1109/TENSYMP50017.2020.9230928" target="_blank" rel="noopener">DOI</a></span> -->
-              <span><a class="link" href="assets/Papers/EEG_.pdf" style="font-weight: bold;"><img class="email-icon" src="assets/pdf-icon.svg" alt="" aria-hidden="true">PDF</a></span>
-              <!-- <span><a class="link" href="https://" target="_blank" rel="noopener">Presentation</a></span> -->
-              <!-- <span class="pub-status-label">Demo</span> -->
+              <span class="pub-status-label">25%</span>
+              <span><a class="link" href="assets/Papers/Hexaco_CHI2025.pdf" style="font-weight: bold;"><img class="card-icon" src="assets/pdf-icon.svg" alt="" aria-hidden="true">PDF</a></span>
+              <span><a class="link" href="https://www.youtube.com/watch?si=K_kCUgOpx_G3f9C3&v=KwBMVhAcgn4&feature=youtu.be" target="_blank" rel="noopener" style="font-weight: bold;"><img class="card-icon" src="assets/presentation-icon.svg" alt="" aria-hidden="true">Talk</a></span>
+              <!-- <span><a class="link" href="#" onclick="openVideoModal(event)" style="font-weight: bold;"><img class="card-icon" src="assets/video-icon.svg" alt="" aria-hidden="true">Demo</a></span> -->
               <!-- <span class="pub-status-label">Source Code</span> -->
-            </div>
-          </div>
-        </li>
-        <!-- #4 -->
-        <li class="card pub-card" data-type="journal" data-topic="ai-ml" data-published="true" data-year="2023">
-          <div class="pub-thumb">
-            <img src="assets/PaperThumbnails/COVID.png" alt="" loading="lazy">
-          </div>          
-          <div class="pub-body">
+              </div>
+          </div>        
+        </article>
+        <!-- 3 -->
+        <article class="card" data-type="conference" data-topic="bci ai-ml" data-published="true" data-year="2020">
+          <figure class="card-thumbnail">
+            <img src="assets/PaperThumbnails/EEG_.png" alt="">
+          </figure>
+          <div class="card-content">
+            <h3><a class="pub-title-link" href="https://doi.org/10.1109/TENSYMP50017.2020.9230928" target="_blank" rel="noopener">EEG Based Autism Detection Using CNN Through Correlation Based Transformation of Channels' Data</a></h3>
+            <div class="card-meta">Zahrul Jannat Peya, MAH Akhand, <b>Jannatul Ferdous Srabonee</b>, &amp; Nazmul Siddique.<br>— <em>IEEE TENSYMP 2020</em></div>
+            <div class="pub-meta-row">
+              <span class="pub-number"></span>
+              <span class="pub-status-label">Conference Paper</span>
+              <span class="pub-status-label"></span>
+              <span><a class="link" href="assets/Papers/EEG_.pdf" style="font-weight: bold;"><img class="card-icon" src="assets/pdf-icon.svg" alt="" aria-hidden="true">PDF</a></span>
+              <!-- <span><a class="link" href="" target="_blank" rel="noopener" style="font-weight: bold;"><img class="card-icon" src="assets/presentation-icon.svg" alt="" aria-hidden="true">Talk</a></span> -->
+              <!-- <span><a class="link" href="#" onclick="openVideoModal(event)" style="font-weight: bold;"><img class="card-icon" src="assets/video-icon.svg" alt="" aria-hidden="true">Demo</a></span> -->
+              <!-- <span class="pub-status-label">Source Code</span> -->
+              </div>
+          </div>        
+        </article>       
+        <!-- 4 -->
+        <article class="card" data-type="journal" data-topic="ai-ml" data-published="true" data-year="2023">
+          <figure class="card-thumbnail">
+            <img src="assets/PaperThumbnails/COVID.png" alt="">
+          </figure>
+          <div class="card-content">
             <h3><a class="pub-title-link" href="https://doi.org/10.12720/jait.14.1.7-19" target="_blank" rel="noopener">Computer Vision-Based IoT Architecture for Post COVID-19 Preventive Measures</a></h3>
-            <p class="hint" style="margin-bottom:0.5rem;">Ahsanul Akib, Kamruddin Nur, Suman Saha, <b>Jannatul Ferdous Srabonee</b>, &amp; M. F. Mridha.<br>— <em>Journal of Advances in Information Technology 2023</em></p>
-            <p class="venue-line"style="color: var(--color-ink); font-size:.82rem;">
-              Most mask detectors stop at "mask or no mask." This IoT gatekeeper also detects the case if the mask is worn wrong using an AI <br>
-              system tuned to 99.88% detection accuracy.
-            </p>
+            <div class="card-meta">Ahsanul Akib, Kamruddin Nur, Suman Saha, <b>Jannatul Ferdous Srabonee</b>, &amp; M. F. Mridha.<br>— <em>Journal of Advances in Information Technology 2023</em></div>
             <div class="pub-meta-row">
               <span class="pub-number"></span>
               <span class="pub-status-label">Journal Article</span>
-              <!-- <span class="pub-status-label">Scopus(Q3)</span> -->
-              <!-- <span><a class="link" href="https://doi.org/10.12720/jait.14.1.7-19" target="_blank" rel="noopener">DOI</a></span> -->
-              <span><a class="link" href="assets/Papers/COVID.pdf" style="font-weight: bold;"><img class="email-icon" src="assets/pdf-icon.svg" alt="" aria-hidden="true">PDF</a></span>
-              <!-- <span><a class="link" href="https://www.youtube.com/watch?si=K_kCUgOpx_G3f9C3&v=KwBMVhAcgn4&feature=youtu.be" target="_blank" rel="noopener">Presentation</a></span> -->
-              <!-- <span class="pub-status-label">Demo</span> -->
+              <!-- <span class="pub-status-label"></span> -->
+              <span><a class="link" href="assets/Papers/COVID.pdf" style="font-weight: bold;"><img class="card-icon" src="assets/pdf-icon.svg" alt="" aria-hidden="true">PDF</a></span>
+              <!-- <span><a class="link" href="" target="_blank" rel="noopener" style="font-weight: bold;"><img class="card-icon" src="assets/presentation-icon.svg" alt="" aria-hidden="true">Talk</a></span> -->
+              <!-- <span><a class="link" href="#" onclick="openVideoModal(event)" style="font-weight: bold;"><img class="card-icon" src="assets/video-icon.svg" alt="" aria-hidden="true">Demo</a></span> -->
               <!-- <span class="pub-status-label">Source Code</span> -->
-            </div>
-          </div>
-        </li>
-        <!-- #5 -->
-        <li class="card pub-card" data-type="journal" data-topic="bci ai-ml" data-published="true" data-year="2022">
-          <div class="pub-thumb">
-            <img src="assets/PaperThumbnails/Autism2022_.png" alt="" loading="lazy">
-          </div>          
-          <div class="pub-body">
+              </div>
+          </div>        
+        </article>
+        <!-- 5 -->
+        <article class="card" data-type="journal" data-topic="bci ai-ml" data-published="true" data-year="2022">
+          <figure class="card-thumbnail">
+            <img src="assets/PaperThumbnails/Autism2022_.png" alt="">
+          </figure>
+          <div class="card-content">
             <h3><a class="pub-title-link" href="https://doi.org/10.3844/jcssp.2022.695.704" target="_blank" rel="noopener">Autism Detection from 2D Transformed EEG Signal using Convolutional Neural Network</a></h3>
-            <p class="hint" style="margin-bottom:0.5rem;">Zahrul Jannat Peya, MAH Akhand, <b>Jannatul Ferdous Srabonee</b>, &amp; Nazmul Siddique.<br>— <em>Journal of Computer Science 2022</em></p>
-            <p class="venue-line"style="color: var(--color-ink); font-size:.82rem;">
-              Autism diagnosis usually means months of waiting and subjective screening. This work turns brain activities into images that are<br>
-              fed into a neural network for early detection.
-            </p>
+            <div class="card-meta">Zahrul Jannat Peya, MAH Akhand, <b>Jannatul Ferdous Srabonee</b>, &amp; Nazmul Siddique.<br>— <em>Journal of Computer Science 2022</em></div>
             <div class="pub-meta-row">
               <span class="pub-number"></span>
               <span class="pub-status-label">Journal Article</span>
-              <!-- <span class="pub-status-label">Scopus(Q4)</span> -->
-              <!-- <span><a class="link" href="https://doi.org/10.3844/jcssp.2022.695.704" target="_blank" rel="noopener">DOI</a></span> -->
-              <span><a class="link" href="assets/Papers/Autism2022.pdf" style="font-weight: bold;"><img class="email-icon" src="assets/pdf-icon.svg" alt="" aria-hidden="true">PDF</a></span>
-              <!-- <span><a class="link" href="https://www.youtube.com/watch?si=K_kCUgOpx_G3f9C3&v=KwBMVhAcgn4&feature=youtu.be" target="_blank" rel="noopener">Presentation</a></span> -->
-              <!-- <span class="pub-status-label">Demo</span> -->
+              <!-- <span class="pub-status-label"></span> -->
+              <span><a class="link" href="assets/Papers/Autism2022.pdf" style="font-weight: bold;"><img class="card-icon" src="assets/pdf-icon.svg" alt="" aria-hidden="true">PDF</a></span>
+              <!-- <span><a class="link" href="" target="_blank" rel="noopener" style="font-weight: bold;"><img class="card-icon" src="assets/presentation-icon.svg" alt="" aria-hidden="true">Talk</a></span> -->
+              <!-- <span><a class="link" href="#" onclick="openVideoModal(event)" style="font-weight: bold;"><img class="card-icon" src="assets/video-icon.svg" alt="" aria-hidden="true">Demo</a></span> -->
               <!-- <span class="pub-status-label">Source Code</span> -->
-            </div>
-          </div>
-        </li>
-        <!-- #6 -->
-        <li class="card pub-card" data-type="book" data-topic="bci ai-ml" data-published="true" data-year="2020">
-          <div class="pub-thumb">
-            <img src="assets/PaperThumbnails/Alcoholism_.png" alt="" loading="lazy">
-          </div>          
-          <div class="pub-body">
+              </div>
+          </div>        
+        </article>  
+        <!-- 6 -->
+        <article class="card" data-type="book" data-topic="bci ai-ml" data-published="true" data-year="2021">
+          <figure class="card-thumbnail">
+            <img src="assets/PaperThumbnails/Alcoholism_.png" alt="">
+          </figure>
+          <div class="card-content">
             <h3><a class="pub-title-link" href="https://doi.org/10.1007/978-981-16-0586-4_24" target="_blank" rel="noopener">Alcoholism Detection from 2D Transformed EEG Signal</a></h3>
-            <p class="hint" style="margin-bottom:0.5rem;"><b>Jannatul Ferdous Srabonee</b>, Zahrul Jannat Peya, MAH Akhand, &amp; Nazmul Siddique. <br>— <em>IJCACI Springer 2020</em></p>
-            <p class="venue-line"style="color: var(--color-ink); font-size:.82rem;">
-              Traditional alcoholism screening methods often lack diagnostic precision, while blood alcohol content testing, though more objective, requires <br>
-              additional time and clinical resources. This work demonstrates that alcoholism can be detected directly from EEG signals alone, <br>
-              offering a faster, non-invasive alternative that achieves 98% classification accuracy.
-            </p>
+            <div class="card-meta"><b>Jannatul Ferdous Srabonee</b>, Zahrul Jannat Peya, MAH Akhand, &amp; Nazmul Siddique. <br>— <em>IJCACI Springer 2021</em></div>
             <div class="pub-meta-row">
               <span class="pub-number"></span>
               <span class="pub-status-label">Book Chapter</span>
-              <!-- <span class="pub-status-label">25%</span> -->
-              <!-- <span><a class="link" href="https://doi.org/10.1007/978-981-16-0586-4_24" target="_blank" rel="noopener">DOI</a></span> -->
-              <!-- <span><a class="link" href="assets/Papers/Alcoholism.pdf">PDF</a></span> -->
-              <!-- <span><a class="link" href="https://www.youtube.com/watch?si=K_kCUgOpx_G3f9C3&v=KwBMVhAcgn4&feature=youtu.be" target="_blank" rel="noopener">Presentation</a></span> -->
-              <!-- <span class="pub-status-label">Demo</span> -->
+              <!-- <span class="pub-status-label"></span> -->
+              <!-- <span><a class="link" href="assets/Papers/" style="font-weight: bold;"><img class="card-icon" src="assets/pdf-icon.svg" alt="" aria-hidden="true">PDF</a></span> -->
+              <!-- <span><a class="link" href="" target="_blank" rel="noopener" style="font-weight: bold;"><img class="card-icon" src="assets/presentation-icon.svg" alt="" aria-hidden="true">Talk</a></span> -->
+              <!-- <span><a class="link" href="#" onclick="openVideoModal(event)" style="font-weight: bold;"><img class="card-icon" src="assets/video-icon.svg" alt="" aria-hidden="true">Demo</a></span> -->
               <!-- <span class="pub-status-label">Source Code</span> -->
-            </div>
-          </div>
-        </li>
-        <!-- #7 -->
-        <li class="card pub-card" data-type="underReview" data-topic="accessibility gesture-mapping eye-tracking text-entry" data-year="2026">
-          <div class="pub-thumb">
-            <img src="assets/PaperThumbnails/unpublished-placeholder.svg" alt="" loading="lazy">
-          </div>          
-          <div class="pub-body">
+              </div>
+          </div>        
+        </article>
+        <!-- 7 -->
+        <article class="card" data-type="underReview" data-topic="accessibility gesture-mapping eye-tracking text-entry" data-year="2026">
+          <figure class="card-thumbnail">
+            <img src="assets/PaperThumbnails/unpublished-placeholder.svg" alt="">
+          </figure>
+          <div class="card-content">
             <h3>Gaze & Gape: Hands-Free Text Entry Using Gaze and Mouth-Open Gestures</h3>
-            <!-- <p class="hint" style="margin-bottom:0.5rem;"><b>Jannatul Ferdous Srabonee</b>, Ohoud Mosa Alharbi, Wolfgang Stuerzlinger, &amp; Ahmed Arif. <br>— <em>ACM CHI 2025</em></p> -->
+            <!-- <div class="card-meta"><b>Jannatul Ferdous Srabonee</b>, Zahrul Jannat Peya, MAH Akhand, &amp; Nazmul Siddique. <br>— <em>IJCACI Springer 2021</em></div> -->
             <div class="pub-meta-row">
               <span class="pub-number"></span>
               <span class="pub-status-label">Under Review</span>
-              <!-- <span class="pub-status-label">25%</span> -->
-              <!-- <span><a class="link" href="https://doi.org/" target="_blank" rel="noopener">DOI</a></span> -->
-              <!-- <span><a class="link" href="assets/Papers/.pdf">PDF</a></span> -->
-              <!-- <span><a class="link" href="https://" target="_blank" rel="noopener">Presentation</a></span> -->
-              <!-- <span class="pub-status-label">Demo</span> -->
+              <!-- <span class="pub-status-label"></span> -->
+              <!-- <span><a class="link" href="assets/Papers/" style="font-weight: bold;"><img class="card-icon" src="assets/pdf-icon.svg" alt="" aria-hidden="true">PDF</a></span> -->
+              <!-- <span><a class="link" href="" target="_blank" rel="noopener" style="font-weight: bold;"><img class="card-icon" src="assets/presentation-icon.svg" alt="" aria-hidden="true">Talk</a></span> -->
+              <!-- <span><a class="link" href="#" onclick="openVideoModal(event)" style="font-weight: bold;"><img class="card-icon" src="assets/video-icon.svg" alt="" aria-hidden="true">Demo</a></span> -->
               <!-- <span class="pub-status-label">Source Code</span> -->
-            </div>
-          </div>
-        </li>
-        <!-- #8 -->
-        <li class="card pub-card" data-type="underReview" data-topic="eye-tracking telepresence robotics" data-year="2026">
-          <div class="pub-thumb">
-            <img src="assets/PaperThumbnails/unpublished-placeholder.svg" alt="" loading="lazy">
-          </div>          
-          <div class="pub-body">
+              </div>
+          </div>        
+        </article>
+        <!-- 8 -->
+        <article class="card" data-type="underReview" data-topic="eye-tracking telepresence robotics" data-year="2026">
+          <figure class="card-thumbnail">
+            <img src="assets/PaperThumbnails/unpublished-placeholder.svg" alt="">
+          </figure>
+          <div class="card-content">
             <h3>GazeDriver: Semi and Fully Autonomous Telepresence Robot Control Using Eye Gaze in Virtual Reality</h3>
-            <!-- <p class="hint" style="margin-bottom:0.5rem;"><b>Jannatul Ferdous Srabonee</b>, Ohoud Mosa Alharbi, Wolfgang Stuerzlinger, &amp; Ahmed Arif. <br>— <em>ACM CHI 2025</em></p> -->
+            <!-- <div class="card-meta"><b>Jannatul Ferdous Srabonee</b> <br>— <em>ACM CHI 2025</em></div> -->
             <div class="pub-meta-row">
               <span class="pub-number"></span>
               <span class="pub-status-label">Under Review</span>
-              <!-- <span class="pub-status-label">25%</span> -->
-              <!-- <span><a class="link" href="https://doi.org/" target="_blank" rel="noopener">DOI</a></span> -->
-              <!-- <span><a class="link" href="assets/Papers/">PDF</a></span> -->
-              <!-- <span><a class="link" href="https://" target="_blank" rel="noopener">Presentation</a></span> -->
-              <!-- <span class="pub-status-label">Demo</span> -->
+              <!-- <span class="pub-status-label"></span> -->
+              <!-- <span><a class="link" href="assets/Papers/" style="font-weight: bold;"><img class="card-icon" src="assets/pdf-icon.svg" alt="" aria-hidden="true">PDF</a></span> -->
+              <!-- <span><a class="link" href="" target="_blank" rel="noopener" style="font-weight: bold;"><img class="card-icon" src="assets/presentation-icon.svg" alt="" aria-hidden="true">Talk</a></span> -->
+              <!-- <span><a class="link" href="#" onclick="openVideoModal(event)" style="font-weight: bold;"><img class="card-icon" src="assets/video-icon.svg" alt="" aria-hidden="true">Demo</a></span> -->
               <!-- <span class="pub-status-label">Source Code</span> -->
-            </div>
-          </div>
-        </li>
-        <!-- #9 -->
-        <li class="card pub-card" data-type="inProgress" data-topic="text-entry text-composition" data-year="2026">
-          <div class="pub-thumb">
-            <img src="assets/PaperThumbnails/unpublished-placeholder.svg" alt="" loading="lazy">
-          </div>          
-          <div class="pub-body">
+              </div>
+          </div>        
+        </article>
+        <!-- 9 -->
+        <article class="card" data-type="inProgress" data-topic="text-entry text-composition" data-year="2026">
+          <figure class="card-thumbnail">
+            <img src="assets/PaperThumbnails/unpublished-placeholder.svg" alt="">
+          </figure>
+          <div class="card-content">
             <h3>Effect of Latency on Real-Time Writing Feedback</h3>
-            <!-- <p class="hint" style="margin-bottom:0.5rem;"><b>Jannatul Ferdous Srabonee</b>, Ohoud Mosa Alharbi, Wolfgang Stuerzlinger, &amp; Ahmed Arif. <br>— <em>ACM CHI 2025</em></p> -->
+            <!-- <div class="card-meta"><b>Jannatul Ferdous Srabonee</b> <br>— <em>ACM CHI 2025</em></div> -->
             <div class="pub-meta-row">
               <span class="pub-number"></span>
-              <span class="pub-status-label">In Preparation</span>
-              <!-- <span class="pub-status-label">25%</span> -->
-              <!-- <span><a class="link" href="https://doi.org/" target="_blank" rel="noopener">DOI</a></span> -->
-              <!-- <span><a class="link" href="assets/Papers/.pdf">PDF</a></span> -->
-              <!-- <span><a class="link" href="https://" target="_blank" rel="noopener">Presentation</a></span> -->
-              <!-- <span class="pub-status-label">Demo</span> -->
+              <span class="pub-status-label">In preparation</span>
+              <!-- <span class="pub-status-label"></span> -->
+              <!-- <span><a class="link" href="assets/Papers/" style="font-weight: bold;"><img class="card-icon" src="assets/pdf-icon.svg" alt="" aria-hidden="true">PDF</a></span> -->
+              <!-- <span><a class="link" href="" target="_blank" rel="noopener" style="font-weight: bold;"><img class="card-icon" src="assets/presentation-icon.svg" alt="" aria-hidden="true">Talk</a></span> -->
+              <!-- <span><a class="link" href="#" onclick="openVideoModal(event)" style="font-weight: bold;"><img class="card-icon" src="assets/video-icon.svg" alt="" aria-hidden="true">Demo</a></span> -->
               <!-- <span class="pub-status-label">Source Code</span> -->
-            </div>
-          </div>
-        </li>
-        <!-- #10 -->
-        <li class="card pub-card" data-type="inProgress" data-topic="force-pressure" data-year="2026">
-          <div class="pub-thumb">
-            <img src="assets/PaperThumbnails/unpublished-placeholder.svg" alt="" loading="lazy">
-          </div>          
-          <div class="pub-body">
+              </div>
+          </div>        
+        </article>
+        <!-- 10 -->
+         <article class="card" data-type="inProgress" data-topic="force-pressure" data-year="2026">
+          <figure class="card-thumbnail">
+            <img src="assets/PaperThumbnails/unpublished-placeholder.svg" alt="">
+          </figure>
+          <div class="card-content">
             <h3>PentaForce: Novel Force based Input Technique using Five Fingers</h3>
-            <!-- <p class="hint" style="margin-bottom:0.5rem;"><b>Jannatul Ferdous Srabonee</b>, Ohoud Mosa Alharbi, Wolfgang Stuerzlinger, &amp; Ahmed Arif. <br>— <em>ACM CHI 2025</em></p> -->
+            <!-- <div class="card-meta"><b>Jannatul Ferdous Srabonee</b> <br>— <em>ACM CHI 2025</em></div> -->
             <div class="pub-meta-row">
               <span class="pub-number"></span>
-              <span class="pub-status-label">In Preparation</span>
-              <!-- <span class="pub-status-label">25%</span> -->
-              <!-- <span><a class="link" href="https://doi.org/" target="_blank" rel="noopener">DOI</a></span> -->
-              <!-- <span><a class="link" href="assets/Papers/.pdf">PDF</a></span> -->
-              <!-- <span><a class="link" href="https://" target="_blank" rel="noopener">Presentation</a></span> -->
-              <!-- <span class="pub-status-label">Demo</span> -->
+              <span class="pub-status-label">In preparation</span>
+              <!-- <span class="pub-status-label"></span> -->
+              <!-- <span><a class="link" href="assets/Papers/" style="font-weight: bold;"><img class="card-icon" src="assets/pdf-icon.svg" alt="" aria-hidden="true">PDF</a></span> -->
+              <!-- <span><a class="link" href="" target="_blank" rel="noopener" style="font-weight: bold;"><img class="card-icon" src="assets/presentation-icon.svg" alt="" aria-hidden="true">Talk</a></span> -->
+              <!-- <span><a class="link" href="#" onclick="openVideoModal(event)" style="font-weight: bold;"><img class="card-icon" src="assets/video-icon.svg" alt="" aria-hidden="true">Demo</a></span> -->
               <!-- <span class="pub-status-label">Source Code</span> -->
-            </div>
-          </div>
-        </li>
-        <!-- #11 -->
-        <li class="card pub-card" data-type="inProgress" data-topic="bci" data-year="2026">
-          <div class="pub-thumb">
-            <img src="assets/PaperThumbnails/unpublished-placeholder.svg" alt="" loading="lazy">
-          </div>          
-          <div class="pub-body">
+              </div>
+          </div>        
+        </article> 
+        <!-- 11 -->
+        <article class="card" data-type="inProgress" data-topic="bci" data-year="2026">
+          <figure class="card-thumbnail">
+            <img src="assets/PaperThumbnails/unpublished-placeholder.svg" alt="">
+          </figure>
+          <div class="card-content">
             <h3>A Systematic Review on Various Motor Imagery Tasks used In Brain-Computer Interfaces</h3>
-            <!-- <p class="hint" style="margin-bottom:0.5rem;"><b>Jannatul Ferdous Srabonee</b>, Ohoud Mosa Alharbi, Wolfgang Stuerzlinger, &amp; Ahmed Arif. <br>— <em>ACM CHI 2025</em></p> -->
+            <!-- <div class="card-meta"><b>Jannatul Ferdous Srabonee</b> <br>— <em>ACM CHI 2025</em></div> -->
             <div class="pub-meta-row">
               <span class="pub-number"></span>
-              <span class="pub-status-label">In Preparation</span>
-              <!-- <span class="pub-status-label">25%</span> -->
-              <!-- <span><a class="link" href="https://doi.org/" target="_blank" rel="noopener">DOI</a></span> -->
-              <!-- <span><a class="link" href="assets/Papers/.pdf">PDF</a></span> -->
-              <!-- <span><a class="link" href="https://" target="_blank" rel="noopener">Presentation</a></span> -->
-              <!-- <span class="pub-status-label">Demo</span> -->
+              <span class="pub-status-label">In preparation</span>
+              <!-- <span class="pub-status-label"></span> -->
+              <!-- <span><a class="link" href="assets/Papers/" style="font-weight: bold;"><img class="card-icon" src="assets/pdf-icon.svg" alt="" aria-hidden="true">PDF</a></span> -->
+              <!-- <span><a class="link" href="" target="_blank" rel="noopener" style="font-weight: bold;"><img class="card-icon" src="assets/presentation-icon.svg" alt="" aria-hidden="true">Talk</a></span> -->
+              <!-- <span><a class="link" href="#" onclick="openVideoModal(event)" style="font-weight: bold;"><img class="card-icon" src="assets/video-icon.svg" alt="" aria-hidden="true">Demo</a></span> -->
               <!-- <span class="pub-status-label">Source Code</span> -->
-            </div>
-          </div>
-        </li> 
+              </div>
+          </div>        
+        </article>
         
-        <!-- <li class="card pub-card" data-type="" data-topic="" data-year="">
-          <div class="pub-thumb">
-            <img src="assets/PaperThumbnails/" alt="" loading="lazy">
-          </div>          
-          <div class="pub-body">
-            <h3></h3>
-            <p class="hint" style="margin-bottom:0.5rem;"> <b>Jannatul Ferdous Srabonee</b>&amp; Advisor. <br>— <em>Publisher</em></p>
-            <div class="pub-meta-row">
-              <span class="pub-number"></span>
-              <span class="pub-status-label">Status</span>
-              <span class="pub-status-label">Acceptance Rate</span>
-              <span><a class="link" href="https://doi.org/" target="_blank" rel="noopener">DOI</a></span>
-              <span><a class="link" href="assets/Papers/.pdf">PDF</a></span>
-              <span><a class="link" href="https://" target="_blank" rel="noopener">Presentation</a></span>
-              <span class="pub-status-label">Demo</span>
-              <span class="pub-status-label">Source Code</span>
-            </div>
-          </div>
-        </li>      -->
 
-      </ul>
+      </div>
 
       <!-- Video Modal -->
       <div id="videoModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; align-items: center; justify-content: center;">
@@ -526,126 +491,145 @@
         </div>
       </div>
 
-      <p id="pub-empty-state" class="hint" hidden>No publications match the selected filters. Try selecting "All" on one of the filter rows above.</p>
+      <p id="pub-empty-state" class="pub-filter-status" hidden>No publications match the selected filters. Try selecting "All" on one of the filter rows above.</p>
 
-      <h2 id="posters" 
-          style="margin-top: var(--space-5);
-                padding-bottom: var(--space-2); 
-                text-align: center; 
-                border-bottom: 1px solid var(--color-line);">
-          Posters &amp; Presentations
-      </h2>
-      <ul class="poster-list">
-        <li>
-          <img class="poster-icon" src="assets/poster.svg" alt="" />
+
+    </section>
+
+    <!-- Posters Section -->
+    <section id="posters">
+      <h1>Posters</h1>
+
+      <div class="posters-list">      
+        <article class="card-poster">
+          <img class="poster-icon" src="assets/presentation-icon_.svg" alt="" />
           <div class="poster-text">
             <h3>AI in Accessibility</h3>
-            <p class="hint"><b>Jannatul Ferdous Srabonee</b><br>
+            <p class="card-meta"><b>Jannatul Ferdous Srabonee</b><br>
               <span class="venue-line">— <em><a class="link" href="https://engineering.ucmerced.edu/industry_day/" target="_blank" rel="noopener">Industry Day, Research Week, 2026, UC Merced</a></em></span>
             </p>
           </div>
-        </li>
+        </article>
 
-        <li>
-          <img class="poster-icon" src="assets/poster.svg" alt="" />
+        <article class="card-poster">
+          <img class="poster-icon" src="assets/presentation-icon_.svg" alt="" />
           <div class="poster-text">
             <h3>EEG-based Major Depressive Disorder (MDD) Identification through Functional Connectivity Analysis</h3>
-            <p class="hint"><b>Jannatul Ferdous Srabonee</b><br>
-             <span class="venue-line">— <em><a class="link" href="https://www.humanbrainproject.eu/en/education/ebrains-workshops/basses/" target="_blank" rel="noopener">EBRAINS Workshop: Brain Activity across Scales and Species: analysis of experiments and Simulations, 2022, Rome, Italy</a> [Virtual]</em></span>
+            <p class="card-meta"><b>Jannatul Ferdous Srabonee</b><br>
+              <span class="venue-line">— <em><a class="link" href="https://www.humanbrainproject.eu/en/education/ebrains-workshops/basses/" target="_blank" rel="noopener">EBRAINS Workshop: Brain Activity across Scales and Species: analysis of experiments and Simulations, 2022, Rome, Italy</a> [Virtual]</em></span>
             </p>
           </div>
-        </li>
+        </article>
 
-        <li>
-          <img class="poster-icon" src="assets/poster.svg" alt="" />
+        <article class="card-poster">
+          <img class="poster-icon" src="assets/presentation-icon_.svg" alt="" />
           <div class="poster-text">
             <h3>Exploring the Impacts of HEXACO Personality Traits on Text Composition and Transcription</h3>
-            <p class="hint"><b>Jannatul Ferdous Srabonee</b><br>
-             <span class="venue-line">— <em><a class="link" href="https://chi2025.acm.org/" target="_blank" rel="noopener">CHI 2025, Yokohama, Japan</a></em></span>
+            <p class="card-meta"><b>Jannatul Ferdous Srabonee</b><br>
+              <span class="venue-line">— <em><a class="link" href="https://chi2025.acm.org/" target="_blank" rel="noopener">CHI 2025, Yokohama, Japan</a></em></span>
             </p>
           </div>
-        </li>
+        </article>
 
-        <li>
-          <img class="poster-icon" src="assets/poster.svg" alt="" />
+        <article class="card-poster">
+          <img class="poster-icon" src="assets/presentation-icon_.svg" alt="" />
           <div class="poster-text">
             <h3>A Machine Learning Based Depression Screening Tool from EEG Data to Aid Clinicians</h3>
-            <p class="hint"><b>Jannatul Ferdous Srabonee</b>, Umima Afifa<br>
-             <span class="venue-line">— <em><a class="link" href="https://bnia.basis.org.bd/" target="_blank" rel="noopener">Bangladesh Association of Software Information Services (BASIS) National ICT Awards, 2022 Dhaka, Bangladesh</a></em></span>
+            <p class="card-meta"><b>Jannatul Ferdous Srabonee</b>, Umima Afifa<br>
+              <span class="venue-line">— <em><a class="link" href="https://bnia.basis.org.bd/" target="_blank" rel="noopener">Bangladesh Association of Software Information Services (BASIS) National ICT Awards, 2022 Dhaka, Bangladesh</a></em></span>
             </p>
           </div>
-        </li>
+        </article>
 
-        <li>
-          <img class="poster-icon" src="assets/poster.svg" alt="" />
+        <article class="card-poster">
+          <img class="poster-icon" src="assets/presentation-icon_.svg" alt="" />
           <div class="poster-text">
             <h3>Machine Learning Based Depression Screening Tool from EEG Data to Aid Clinicians</h3>
-            <p class="hint"><b>Jannatul Ferdous Srabonee</b><br>
-             <span class="venue-line">— <em>International Conference on 4IR (4th Industrial Revolution) for the Emerging Future, 2022, Dhaka, Bangladesh</em></span>
+            <p class="card-meta"><b>Jannatul Ferdous Srabonee</b>, Umima Afifa<br>
+              <span class="venue-line">— <em>International Conference on 4IR (4th Industrial Revolution) for the Emerging Future, 2022, Dhaka, Bangladesh</em></span>
             </p>
           </div>
-        </li>
+        </article>
 
-        
-        <li>
-          <img class="poster-icon" src="assets/poster.svg" alt="" />
+        <article class="card-poster">
+          <img class="poster-icon" src="assets/presentation-icon_.svg" alt="" />
           <div class="poster-text">
             <h3>COVID-19 Defense System</h3>
-            <p class="hint"><b>Jannatul Ferdous Srabonee</b><br>
-             <span class="venue-line">— <em><a class="link" href="https://ieeeyesist12.github.io/IEEEYESIST12-FrontEnd/index.html" target="_blank" rel="noopener">IEEE YESIST12 Maker Fair, 2021</a></em></span>
+            <p class="card-meta"><b>Jannatul Ferdous Srabonee</b>, Umima Afifa<br>
+              <span class="venue-line">— <em><a class="link" href="https://ieeeyesist12.github.io/IEEEYESIST12-FrontEnd/index.html" target="_blank" rel="noopener">IEEE YESIST12 Maker Fair, 2021</a></em></span>
             </p>
           </div>
-        </li>
+        </article>
 
-        
-        <li>
-          <img class="poster-icon" src="assets/poster.svg" alt="" />
+        <article class="card-poster">
+          <img class="poster-icon" src="assets/presentation-icon_.svg" alt="" />
           <div class="poster-text">
             <h3>Mobile App for Post COVID-19 Measures</h3>
-            <p class="hint"><b>Jannatul Ferdous Srabonee</b><br>
-             <span class="venue-line">— <em><a class="link" href="https://2021.spaceappschallenge.org/" target="_blank" rel="noopener">NASA Space Apps Challenge, 2021</a></em></span>
+            <p class="card-meta"><b>Jannatul Ferdous Srabonee</b>, Umima Afifa<br>
+              <span class="venue-line">— <em><a class="link" href="https://2021.spaceappschallenge.org/" target="_blank" rel="noopener">NASA Space Apps Challenge, 2021</a></em></span>
             </p>
           </div>
-        </li>
-        
-        <li>
-          <img class="poster-icon" src="assets/poster.svg" alt="" />
+        </article>
+
+        <article class="card-poster">
+          <img class="poster-icon" src="assets/presentation-icon_.svg" alt="" />
           <div class="poster-text">
             <h3>Alcoholism Detection from 2D Transformed EEG Signal</h3>
-            <p class="hint"><b>Jannatul Ferdous Srabonee</b><br>
-             <span class="venue-line">— <em><a class="link" href="https://link.springer.com/book/10.1007/978-981-16-0586-4/" target="_blank" rel="noopener">International Joint Conference on Advances in Computational Intelligence, 2020</a> [Virtual]</em></span>
+            <p class="card-meta"><b>Jannatul Ferdous Srabonee</b>, Umima Afifa<br>
+              <span class="venue-line">— <em><a class="link" href="https://link.springer.com/book/10.1007/978-981-16-0586-4/" target="_blank" rel="noopener">International Joint Conference on Advances in Computational Intelligence, 2020</a> [Virtual]</em></span>
             </p>
           </div>
-        </li>
+        </article>
 
-        <li>
-          <img class="poster-icon" src="assets/poster.svg" alt="" />
+        <article class="card-poster">
+          <img class="poster-icon" src="assets/presentation-icon_.svg" alt="" />
           <div class="poster-text">
             <h3>EEG Based Autism Detection Using CNN Through Correlation Based Transformation of Channels’ Data</h3>
-            <p class="hint"><b>Jannatul Ferdous Srabonee</b><br>
-             <span class="venue-line">— <em><a class="link" href="https://ieeexplore.ieee.org/xpl/conhome/9230456/proceeding" target="_blank" rel="noopener">IEEE Region 10 Symposium, 2020</a> [Virtual]</em></span>
+            <p class="card-meta"><b>Jannatul Ferdous Srabonee</b>, Umima Afifa<br>
+              <span class="venue-line">— <em><a class="link" href="https://ieeexplore.ieee.org/xpl/conhome/9230456/proceeding" target="_blank" rel="noopener">IEEE Region 10 Symposium, 2020</a> [Virtual]</em></span>
             </p>
           </div>
-        </li>
+        </article>
 
-      </ul>
+      </div>
+    </section>
 
+    <!-- Projects Section -->
+    <!-- <section id="projects">
+      <h1>Projects</h1>
+      
+      <article class="card">
+        <h3>Accessible Component Library</h3>
+        <div class="card-meta">2024 | React + TypeScript</div>
+        <p class="card-description">A comprehensive library of fully accessible UI components built with React, featuring detailed documentation and usage examples for developers.</p>
+        <a href="#" class="card-link">View project →</a>
+      </article>
 
-      <footer class="site-footer">
-        <p>Copyright &copy; 2026 Jannatul Ferdous Srabonee</p>
-      </footer>
-    </div>
+      <article class="card">
+        <h3>Design System Documentation Site</h3>
+        <div class="card-meta">2023 | Next.js + MDX</div>
+        <p class="card-description">Interactive documentation portal for a design system serving 50+ products, with searchable components and live code examples.</p>
+        <a href="#" class="card-link">View project →</a>
+      </article>
+
+      <article class="card">
+        <h3>Accessible Data Visualization Tool</h3>
+        <div class="card-meta">2023 | D3.js + Web Standards</div>
+        <p class="card-description">Tool for creating accessible charts and data visualizations with automatic alt text generation and keyboard navigation support.</p>
+        <a href="#" class="card-link">View project →</a>
+      </article>
+
+      <article class="card">
+        <h3>Usability Testing Platform</h3>
+        <div class="card-meta">2022 | Vue.js + Node.js</div>
+        <p class="card-description">Platform for conducting remote usability tests with built-in accessibility testing features and automated WCAG compliance checks.</p>
+        <a href="#" class="card-link">View project →</a>
+      </article>
+    </section> -->
   </main>
-</div>
-<div>
-  
-</div>
 
-<div id="input-mode-badge" aria-hidden="true">
-  <span class="dot"></span>
-  <span id="input-mode-label">Input: Mouse</span>
-</div>
-
-<script src="script.js"></script>
+  <footer>
+    <p>Copyright &copy; 2026 Jannatul Ferdous Srabonee. Built with accessibility in mind.</p>
+  </footer>
 </body>
 </html>

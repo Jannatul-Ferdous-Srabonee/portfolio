@@ -1,27 +1,156 @@
-// =========================================================
-// INPUT MODE DETECTION (Mouse vs Keyboard) — the site's signature demo
-// Purely enhances what :focus-visible already does natively;
-// nothing here is required for accessibility, it's a teaching layer.
-// =========================================================
-(function inputModeBadge() {
-  const badge = document.getElementById('input-mode-badge');
-  const label = document.getElementById('input-mode-label');
-  if (!badge || !label) return;
+// Scroll spy - update active link based on which section is in view
+function updateActiveLink() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
 
-  function setMode(mode) {
-    document.body.classList.toggle('mode-keyboard', mode === 'keyboard');
-    label.textContent = mode === 'keyboard' ? 'Input: Keyboard' : 'Input: Mouse';
+    let current = '';
+    sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (window.scrollY >= sectionTop - 150) {
+        current = section.getAttribute('id');
+    }
+    });
+
+    navLinks.forEach(link => {
+    link.removeAttribute('aria-current');
+    });
+
+    if (current) {
+    const activeLink = document.querySelector(`nav a[href="#${current}"]`);
+    if (activeLink) {
+        activeLink.setAttribute('aria-current', 'page');
+    }
+    }
+}
+
+// Keyboard navigation support
+document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+    link.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+    });
+});
+
+// Update active link on scroll and on page load
+window.addEventListener('scroll', updateActiveLink);
+window.addEventListener('load', updateActiveLink);
+updateActiveLink();
+
+// Focus management - move focus to main content when section is scrolled to
+document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+    link.addEventListener('click', () => {
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+        setTimeout(() => {
+        const heading = target.querySelector('h1, h2');
+        if (heading) {
+            heading.focus();
+            heading.scrollIntoView({ behavior: 'smooth' });
+        }
+        }, 100);
+    }
+    });
+});
+
+// Theme toggle functionality
+const themeToggle = document.getElementById('theme-toggle');
+const themeLabel = document.querySelector('.theme-label');
+const html = document.documentElement;
+
+// Check saved preference or system preference
+function initTheme() {
+  const saved = localStorage.getItem('theme');
+  const isDark = saved === 'dark' || 
+    (saved === null && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  
+  setTheme(isDark ? 'dark' : 'light');
+}
+
+function setTheme(theme) {
+  const themeIcon = document.querySelector('.theme-icon');
+  if (theme === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+    themeToggle.setAttribute('aria-label', 'Light Mode');
+    // themeLabel.textContent = 'Light';
+    themeIcon.src = 'assets/light_mode_icon.svg';  // Light mode icon
+  } else {
+    html.removeAttribute('data-theme');
+    themeToggle.setAttribute('aria-label', 'Dark Mode');
+    // themeLabel.textContent = 'Dark';
+    themeIcon.src = 'assets/dark_mode_icon.svg';  // Dark mode icon
+  }
+  localStorage.setItem('theme', theme);
+}
+
+themeToggle.addEventListener('click', () => {
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  setTheme(isDark ? 'light' : 'dark');
+});
+
+// Initialize on page load
+initTheme();
+
+// =========================================================
+// NAME PRONUNCIATION
+// User-triggered only (never autoplay). Audio is one channel among
+// several — IPA + plain-English respelling are always visible in the
+// caption regardless of whether the audio plays or loads.
+// =========================================================
+(function namePronunciation() {
+  const btn = document.getElementById('pronounce-btn');
+  const audio = document.getElementById('name-audio');
+  if (!btn || !audio) return;
+
+  const syllableTimings = [
+    { start: 0.00, end: 0.29 }, // Jan / dʒə
+    { start: 0.29, end: 0.56 }, // na / ˈnɑː
+    { start: 0.56, end: 1.06 }, // tul / tʊl
+    { start: 1.06, end: 1.64 }, // fer / fɜr
+    { start: 1.64, end: 2.05 }, // dous / ˈdaʊs
+    { start: 2.07, end: 2.94 }, // SRA / sra
+    { start: 2.84, end: 3.13 }, // boh / ˈboʊ
+    { start: 3.13, end: 3.60 }, // nee / ni
+  ];
+
+  function clearHighlight() {
+    document.querySelectorAll('.syl.is-current').forEach((s) => s.classList.remove('is-current'));
   }
 
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Tab') setMode('keyboard');
-  });
-  window.addEventListener('mousedown', () => setMode('mouse'));
-  window.addEventListener('pointerdown', (e) => {
-    if (e.pointerType === 'touch') setMode('mouse');
+  btn.setAttribute('aria-pressed', 'false');
+
+  btn.addEventListener('click', () => {
+    if (!audio.paused) {
+      audio.pause();
+      audio.currentTime = 0;
+      clearHighlight();
+      return;
+    }
+    audio.currentTime = 0;
+    audio.play().catch(() => {
+      // Autoplay/decoding failed silently — respelling + IPA caption
+      // are already visible, so nothing is lost.
+    });
   });
 
-  setMode('mouse');
+  audio.addEventListener('timeupdate', () => {
+    const t = audio.currentTime;
+    syllableTimings.forEach((seg, i) => {
+      const active = t >= seg.start && t < seg.end;
+      document.querySelectorAll(`.syl[data-syl="${i}"]`).forEach((el) => {
+        el.classList.toggle('is-current', active);
+      });
+    });
+  });
+
+  audio.addEventListener('play', () => btn.setAttribute('aria-pressed', 'true'));
+  audio.addEventListener('pause', () => { btn.setAttribute('aria-pressed', 'false'); clearHighlight(); });
+  audio.addEventListener('ended', () => { btn.setAttribute('aria-pressed', 'false'); clearHighlight(); });
 })();
 
 // =========================================================
@@ -49,114 +178,21 @@
 })();
 
 // =========================================================
-// CHART / TABLE TOGGLE (data always available as an accessible table;
-// the "chart" view is a progressive enhancement, never the only source)
-// =========================================================
-(function chartTableToggle() {
-  const wraps = document.querySelectorAll('[data-viz-toggle]');
-  wraps.forEach((wrap) => {
-    const chartBtn = wrap.querySelector('[data-view="chart"]');
-    const tableBtn = wrap.querySelector('[data-view="table"]');
-    const chart = wrap.querySelector('.bar-chart');
-    const table = wrap.querySelector('table');
-    if (!chartBtn || !tableBtn || !chart || !table) return;
-
-    function show(view) {
-      const showChart = view === 'chart';
-      chart.hidden = !showChart;
-      table.hidden = showChart;
-      chartBtn.setAttribute('aria-pressed', String(showChart));
-      tableBtn.setAttribute('aria-pressed', String(!showChart));
-    }
-    chartBtn.addEventListener('click', () => show('chart'));
-    tableBtn.addEventListener('click', () => show('table'));
-    show('table'); // default to the most robust, screen-reader-friendly view
-  });
-})();
-
-// =========================================================
-// CONTRAST / LOW-VISION CONDITION SIMULATOR
-// Demonstrates a UI under different visual conditions for teaching purposes.
-// =========================================================
-(function contrastSimulator() {
-  const group = document.querySelector('[data-sim-controls]');
-  const frame = document.querySelector('.sim-frame');
-  if (!group || !frame) return;
-
-  const buttons = group.querySelectorAll('button');
-  buttons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      frame.className = 'sim-frame'; // reset
-      const sim = btn.getAttribute('data-sim');
-      if (sim !== 'none') frame.classList.add('sim-' + sim);
-      buttons.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
-    });
-  });
-})();
-
-// =========================================================
-// ACCESSIBLE ACCORDION (case study details)
-// =========================================================
-(function accordion() {
-  const triggers = document.querySelectorAll('.accordion-trigger');
-  triggers.forEach((trigger) => {
-    trigger.addEventListener('click', () => {
-      const panelId = trigger.getAttribute('aria-controls');
-      const panel = document.getElementById(panelId);
-      const expanded = trigger.getAttribute('aria-expanded') === 'true';
-      trigger.setAttribute('aria-expanded', String(!expanded));
-      if (panel) panel.hidden = expanded;
-      const icon = trigger.querySelector('.icon');
-      if (icon) icon.textContent = expanded ? '+' : '–';
-    });
-  });
-})();
-
-// =========================================================
-// ACCESSIBLE CLIENT-SIDE FORM VALIDATION
-// Errors are announced via a live region, associated to fields with
-// aria-describedby, and focus moves to the first invalid field.
-// =========================================================
-(function contactForm() {
-  const form = document.getElementById('contact-form');
-  if (!form) return;
-  const status = document.getElementById('form-status');
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    let firstInvalid = null;
-    const fields = form.querySelectorAll('[required]');
-
-    fields.forEach((field) => {
-      const wrap = field.closest('.field');
-      const errorEl = wrap.querySelector('.error-text');
-      const isValid = field.checkValidity() && field.value.trim() !== '';
-      wrap.classList.toggle('error', !isValid);
-      if (errorEl) errorEl.hidden = isValid;
-      field.setAttribute('aria-invalid', String(!isValid));
-      if (!isValid && !firstInvalid) firstInvalid = field;
-    });
-
-    if (firstInvalid) {
-      status.textContent = 'There is a problem with the form. Please review the highlighted field.';
-      firstInvalid.focus();
-    } else {
-      status.textContent = 'Thanks — your message was captured in this demo (no data is actually sent).';
-      form.reset();
-    }
-  });
-})();
-
-// =========================================================
 // PUBLICATION FILTERS (type = single-select, topic = multi-select)
 // A paper matches when its type matches the selected type (or "All")
 // AND it has at least one of the selected topics (or "All" is selected).
 // =========================================================
 (function pubFilters() {
-  const cards = document.querySelectorAll('.pub-card');
-  if (!cards.length) return;
-
+  // const cards = document.querySelectorAll('.card');
   const list = document.querySelector('.pub-list');
+  if (!list) return;
+  
+  const cards = list.querySelectorAll('.card');  // Only cards in pub-list
+  if (!cards.length) return;
+  
+  // if (!cards.length) return;
+
+  // const list = document.querySelector('.pub-list');
   // Snapshot the original authored order once, before any reordering happens.
   // Used as a stable tie-breaker and as the resting order for undated/pending work.
   const originalOrder = Array.from(cards);
@@ -297,63 +333,6 @@
   }
 
   applyFilters(); // initialize status text on load
-})();
-
-// =========================================================
-// NAME PRONUNCIATION
-// User-triggered only (never autoplay). Audio is one channel among
-// several — IPA + plain-English respelling are always visible in the
-// caption regardless of whether the audio plays or loads.
-// =========================================================
-(function namePronunciation() {
-  const btn = document.getElementById('pronounce-btn');
-  const audio = document.getElementById('name-audio');
-  if (!btn || !audio) return;
-
-  const syllableTimings = [
-    { start: 0.00, end: 0.29 }, // Jan / dʒə
-    { start: 0.29, end: 0.56 }, // na / ˈnɑː
-    { start: 0.56, end: 1.06 }, // tul / tʊl
-    { start: 1.06, end: 1.64 }, // fer / fɜr
-    { start: 1.64, end: 2.05 }, // dous / ˈdaʊs
-    { start: 2.07, end: 2.84 }, // SRA / sra
-    { start: 2.84, end: 3.13 }, // boh / ˈboʊ
-    { start: 3.13, end: 3.60 }, // nee / ni
-  ];
-
-  function clearHighlight() {
-    document.querySelectorAll('.syl.is-current').forEach((s) => s.classList.remove('is-current'));
-  }
-
-  btn.setAttribute('aria-pressed', 'false');
-
-  btn.addEventListener('click', () => {
-    if (!audio.paused) {
-      audio.pause();
-      audio.currentTime = 0;
-      clearHighlight();
-      return;
-    }
-    audio.currentTime = 0;
-    audio.play().catch(() => {
-      // Autoplay/decoding failed silently — respelling + IPA caption
-      // are already visible, so nothing is lost.
-    });
-  });
-
-  audio.addEventListener('timeupdate', () => {
-    const t = audio.currentTime;
-    syllableTimings.forEach((seg, i) => {
-      const active = t >= seg.start && t < seg.end;
-      document.querySelectorAll(`.syl[data-syl="${i}"]`).forEach((el) => {
-        el.classList.toggle('is-current', active);
-      });
-    });
-  });
-
-  audio.addEventListener('play', () => btn.setAttribute('aria-pressed', 'true'));
-  audio.addEventListener('pause', () => { btn.setAttribute('aria-pressed', 'false'); clearHighlight(); });
-  audio.addEventListener('ended', () => { btn.setAttribute('aria-pressed', 'false'); clearHighlight(); });
 })();
 
 // Video Modal Controls
