@@ -13,6 +13,10 @@
     --color-brush-bg-soft: #E9DBFA;
     --color-ink-link: #944DDB;
 
+    --color-dark-paper: #1a1a18;
+    --color-dark-paper-raised: #2c2c2a;
+    --color-dark-ink: #e8e8e6;
+
     --font-display: "Atkinson Hyperlegible Next", "Lexend", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --font-body: "Atkinson Hyperlegible Next", "Lexend", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --font-mono: "Atkinson Hyperlegible Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -37,17 +41,18 @@ html[data-theme="dark"] {
 }
 
 html[data-theme="dark"] body {
-  background: #1a1a18;
+  background: var(--color-dark-paper);
   color: #e8e8e6;
 }
 
 html[data-theme="dark"] header {
-  background: #1a1a18;
-  border-bottom-color: #444441;
+  background: var(--color-dark-paper-raised);
+  border-bottom-color: var(--color-line);
 }
 
 html[data-theme="dark"] nav a {
   color: #b4b2a9;
+  text-decoration-color: #b4b2a9;
 }
 
 html[data-theme="dark"] nav a:hover {
@@ -63,7 +68,7 @@ html[data-theme="dark"] nav [aria-current="page"] {
   color: #e8e8e6;
 } */
 html[data-theme="dark"] .skip-link {
-  background: #2c2c2a;
+  background: var(--color-dark-paper-raised);
   color: #e8e8e6;
 }
 
@@ -74,7 +79,7 @@ html[data-theme="dark"] .social-icon-link:focus-visible {
 
 html[data-theme="dark"] .social-icon-link::after {
   background: rgba(200, 200, 200, 0.9);
-  color: #1a1a18;
+  color: var(--color-dark-paper);
 }
 
 html[data-theme="dark"] .brush-text {
@@ -101,6 +106,10 @@ html[data-theme="dark"] .pub-meta-row > span:not(:first-child)::before {
   color: rgba(200, 200, 200, 0.9);
 }
 
+html[data-theme="dark"] .pub-title-link:hover,html[data-theme="dark"] .pub-title-link:focus-visible{
+  color: var(--color-brush-bg-soft);
+}
+
 html[data-theme="dark"] .theme-button .theme-icon {
   filter: brightness(2) invert(1);
 }
@@ -112,7 +121,7 @@ html[data-theme="dark"] .theme-button:focus-visible {
 
 html[data-theme="dark"] .theme-button::after {
   background: rgba(200, 200, 200, 0.9);
-  color: #1a1a18;
+  color: var(--color-dark-paper);
 }
 
 html[data-theme="dark"] .pronounce-respelling {
@@ -128,7 +137,7 @@ html[data-theme="dark"] .pronounce-respelling .syl.is-current {
 
 html[data-theme="dark"] .pronounce-tooltip {
   background: rgba(200, 200, 200, 0.9);
-  color: #1a1a18;
+  color: var(--color-dark-paper);
 }
 
 html[data-theme="dark"] .pronounce-tooltip::after {
@@ -152,18 +161,16 @@ html[data-theme="dark"] h2 {
 }
 
 html[data-theme="dark"] .eyebrow {
-  color: #b4b2a9;
+  color: #e8e8e6;
 }
 
 html[data-theme="dark"] .news-list {
-  border-top-color: #444441;
-  border-bottom-color: #444441;
-  background: #2c2c2a;
+  /* border-top-color: var(--color-line);
+  border-bottom-color: var(--color-line); */
+  background: var(--color-dark-paper-raised);
 }
 
-html[data-theme="dark"] .news-list li {
-  background: #2c2c2a;
-}
+
 
 html[data-theme="dark"] .news-date {
   color: #b4b2a9;
@@ -173,21 +180,21 @@ html[data-theme="dark"] .news-text {
   color: #b4b2a9;
 }
 
-html[data-theme="dark"] .news-list::-webkit-scrollbar-track {
+/* html[data-theme="dark"] .news-list::-webkit-scrollbar-track {
   background: #2c2c2a;
-}
+} */
 
-html[data-theme="dark"] .news-list::-webkit-scrollbar-thumb {
+/* html[data-theme="dark"] .news-list::-webkit-scrollbar-thumb {
   background: #444441;
 }
 
 html[data-theme="dark"] .news-list::-webkit-scrollbar-thumb:hover {
   background: #666663;
-}
+} */
 
 html[data-theme="dark"] .card {
-  background: #2c2c2a;
-  border-color: #444441;
+  background: var(--color-dark-paper-raised);
+  /* border-color: #444441; */
 }
 
 html[data-theme="dark"] .card h3 {
@@ -208,7 +215,7 @@ html[data-theme="dark"] a.card-link {
 }
 
 html[data-theme="dark"] footer {
-  background: #2c2c2a;
+  background: var(--color-dark-paper-raised);
   border-top-color: #444441;
   color: #b4b2a9;
 }
@@ -1203,7 +1210,6 @@ button.filter-chip--topic[aria-pressed="true"] {
 .pub-title-link {
   color: inherit;
   text-decoration: none;
-  
 }
 .pub-title-link:hover,
 .pub-title-link:focus-visible {
