@@ -1,7 +1,8 @@
 /* Color Palette */
 :root {
-    --color-paper: #FCFCFC;
+    /* --color-paper: #FCFCFC; */
     --color-paper-raised: #FAF8FC;
+    --color-paper: #ffffff;
     --color-ink: #1E1D40;
     --color-ink-body: #24244C;
     --color-ink-soft: #4C499C;
@@ -1211,6 +1212,14 @@ button.filter-chip--topic[aria-pressed="true"] {
   color: inherit;
   text-decoration: none;
 }
+
+.pub-title-link::after {
+  content: "↗";
+  font-size: 0.8em;
+  margin-left: 0.25em;
+  vertical-align: super;
+}
+
 .pub-title-link:hover,
 .pub-title-link:focus-visible {
   text-decoration: none;
