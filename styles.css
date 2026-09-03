@@ -1,8 +1,8 @@
 /* Color Palette */
 :root {
-    /* --color-paper: #FCFCFC; */
+    --color-paper: #FCFCFC;
     --color-paper-raised: #FAF8FC;
-    --color-paper: #ffffff;
+    /* --color-paper: #ffffff; */
     --color-ink: #1E1D40;
     --color-ink-body: #24244C;
     --color-ink-soft: #4C499C;
@@ -280,6 +280,7 @@ body {
 
 /* Sticky Navigation: stays in normal document flow so it always reserves exactly the space its content needs, at any zoom level, font-size setting, or viewport size */
 header {
+    position: -webkit-sticky;  /* Safari/iOS/older mobile WebKit requires the prefix */
     position: sticky;
     top: 0;
     width: 100%;
@@ -1259,11 +1260,9 @@ button.filter-chip--topic[aria-pressed="true"] {
   gap: var(--space-2);
 }
 
-.venue-line {
-  white-space: nowrap;
-  overflow-x: none;
-  display: inline-block;
-  max-width: 100%;
+.poster-text {
+  flex: 1;
+  min-width: 0;   /* let flex item shrink below its content width so long venue names wrap */
 }
 
 .poster-icon {
