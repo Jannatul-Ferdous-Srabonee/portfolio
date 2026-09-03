@@ -235,6 +235,11 @@ html[data-theme="dark"] .pronounce-icon{
     padding: 0;
     box-sizing: border-box;
 }
+/* Responsive Images  */
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 html {
     scroll-behavior: smooth;
@@ -273,15 +278,16 @@ body {
     top: 0;
 }
 
-/* Fixed Navigation */
+/* Sticky Navigation: stays in normal document flow so it always reserves exactly the space its content needs, at any zoom level, font-size setting, or viewport size */
 header {
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     background: var(--color-paper-raised);
     border-bottom: 0.5px solid var(--color-line);
     z-index: 50;
-    display: flex;          
+    display: flex;
+    flex-wrap: wrap;
     align-items: center; 
     /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); */
 }
@@ -304,15 +310,17 @@ nav {
     padding: 0 1.25rem;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     /* height: 80px;
     gap: 40px; */
-    height: 5rem;
+    min-height: 5rem;
     gap: 2.5rem;
 }
 
 nav ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     /* gap: 30px; */
     gap: clamp(1rem, 3vw, 1.875rem);
     flex: 1; /* Takes up available space on the left */
@@ -375,7 +383,7 @@ main {
     max-width: 1200px;
     /* margin: 80px auto 0;
     padding: 0 20px; */
-    margin: 5rem auto 0;
+    margin: 0 auto;
     padding: 0 1.25rem;
 }
 
@@ -539,17 +547,24 @@ footer p {
     
     .card-thumbnail {
         width: 100%;
-        height: 150px;
+        height: 9.375rem;
+    }
+
+    /* Stack nav links and social icons into their own rows so nothing overflows narrow viewports */
+    header {
+        flex-direction: column;
+        align-items: stretch;
     }
 
     nav {
-    /* height: 60px;
-    gap: 20px; */
-    height: 3.75rem;
+    min-height: 3.75rem;
+    width: 100%;
+    justify-content: center;
         gap: 1.25rem;
     }
 
     nav ul {
+    justify-content: center;
     /* gap: 15px; */
     gap: 0.9375rem;
     }
@@ -559,17 +574,16 @@ footer p {
     font-size: 0.875rem;
     }
 
-    h1 {
-    font-size: 24px;
-    }
-
-    h2 {
-    font-size: 20px;
+    header > span {
+    width: 100%;
+    margin-left: 0;
+    justify-content: center;
+    padding: 0 1.25rem 0.75rem;
     }
 
     main {
     /* margin: 60px auto 0; */
-    margin: 3.75rem auto 0;
+    margin: 0 auto;
     }
 
     section {
@@ -579,11 +593,11 @@ footer p {
 
     section {
     /* scroll-margin-top: 80px; */
-    scroll-margin-top: 5rem;
+    scroll-margin-top: 7.5rem;
     }
 
     html {
-    scroll-padding-top: 3.75rem;
+    scroll-padding-top: 7.5rem;
     }
 }
 
@@ -1007,7 +1021,7 @@ footer p {
   padding: 0;
   margin: 0;
   gap: clamp(1rem, 3vw, 1.5rem);
-  max-height: 280px;          /* Set height limit */
+  max-height: 17.5rem;          /* Set height limit */
   overflow-y: auto;            /* Enable vertical scroll */
   padding-right: 0.5rem;       /* Space for scrollbar */
   border-bottom: 1px solid var(--color-line);
