@@ -29,7 +29,7 @@
       <ul>
         <li><a href="#about" aria-current="page">About Me</a></li>
         <li><a href="#publications">Publications</a></li>
-        <!-- <li><a href="#projects">Projects</a></li> -->
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#posters">Posters</a></li>
         <li><a href="assets/CV.pdf" aria-label="Download my CV">CV</a></li>        
       </ul>    
@@ -497,37 +497,238 @@
     </section>
 
     <!-- Projects Section -->
-    <!-- <section id="projects">
+    <section id="projects">
       <h1>Projects</h1>
-      
-      <article class="card">
-        <h3>Accessible Component Library</h3>
-        <div class="card-meta">2024 | React + TypeScript</div>
-        <p class="card-description">A comprehensive library of fully accessible UI components built with React, featuring detailed documentation and usage examples for developers.</p>
-        <a href="#" class="card-link">View project →</a>
-      </article>
+      <div id="projectsContainer"></div>       
+    </section>
 
-      <article class="card">
-        <h3>Design System Documentation Site</h3>
-        <div class="card-meta">2023 | Next.js + MDX</div>
-        <p class="card-description">Interactive documentation portal for a design system serving 50+ products, with searchable components and live code examples.</p>
-        <a href="#" class="card-link">View project →</a>
-      </article>
+    <script>
+      const projects = [
+        {
+          category: "HCI • Inclusive interaction",
+          title: "BezelBraille",
+          description: "Developed a braille-inspired bezel-guided virtual keyboard in smartphones for visually impaired users. Conducted a user study with 12 blind and low-vision participants. Research focused on improving eyes-free character-level text entry in smartphones.",
+          images: [
+            "assets/Project/BezelBraille/img_1.jpg",
+            "assets/Project/BezelBraille/vid_1.mp4",
+            "assets/Project/BezelBraille/vid_2.mp4"
+          ],
+          tools: ["Kotlin", "Jetpack Compose", "Android Studio"],
+          github: "",
+          paper: "assets/Papers/Bustoni_MobileHCI2026_BezelBraille.pdf",
+          researchHighlight: { icon: "assets/icon_trophy.svg", text: "Published at MobileHCI 2026" }
+        },
+        {
+          category: "AI/ML • Computer Vision",
+          title: "Face Mask Detection",
+          description: "Developed a face mask detection system using computer vision techniques. Achieved high accuracy in detecting masked, improperly masked, and unmasked faces in real-time video streams.",
+          images: [
+            "assets/Project/COVID/img_1.png",
+            "assets/Project/COVID/img_2.png",
+            "assets/Project/COVID/img_3.png"
+          ],
+          tools: ["Python", "Arduino", "OpenCV", "TensorFlow", "TensorBoard", "Keras", "Visualkeras", "Scikit-learn", "Matplotlib"],
+          github: "https://github.com/Jannatul-Ferdous-Srabonee/FaceMaskDetection.git",
+          paper: "https://doi.org/10.12720/jait.14.1.7-19",
+          researchHighlight: { icon: "assets/icon_trophy.svg", text: "Published at JAIT 2023" }
+        },
+        {
+          category: "BCI • AI/ML",
+          title: "Depression Screening using BCI",
+          description: "Developed a framework showing Granger‑causal effect to analyze directional connectivity in EEG signals and identify biomarkers linked to depression. Used time-frequency features to train a fine‑tuned SVM classifier, which reliably distinguished depressive from non‑depressive EEG profiles.",
+          images: [
+            "assets/Project/EEG_Depression/vid_1.mp4"            
+          ],
+          tools: ["Python", "MATLAB", "EEGLAB"],
+          github: "none",
+          paper: "",
+          researchHighlight: { icon: "assets/icon_trophy.svg", text: "Received WINNER Award at the BASIS ICT Contest 2022" }
+        },
+        {
+          category: "BCI • AI/ML",
+          title: "Early Autism Detection from Brain Signals",
+          description: "Developed a system to detect autism from correlation-based 2D transformation of EEG signals. Used deep learning models (CNN) to classify EEG patterns associated with autism.",
+          images: [
+            "assets/Project/EEG_Autism/vid_1.mp4"
+            
+          ],
+          tools: ["Python", "MATLAB", "TensorFlow", "Keras", "Scikit-learn", "Matplotlib", "EEGLAB"],
+          github: "none",
+          paper: "https://doi.org/10.1007/978-981-16-0586-4_24",
+          researchHighlight: { icon: "assets/icon_trophy.svg", text: "Published at IJCACI Springer 2021" }
+        },
+        {
+          category: "BCI • AI/ML",
+          title: "EEG-based Alcoholism Detection",
+          description: "Developed an EEG-based alcoholism detection system. Used deep learning models (CNN) to classify alcholic brain patterns.",
+          images: [
+            "assets/Project/EEG_Alcohol/vid_1.mp4"
+            
+          ],
+          tools: ["Python", "R", "MATLAB", "TensorFlow", "Keras", "Scikit-learn", "Matplotlib", "EEGLAB"],
+          github: "none",
+          paper: "https://doi.org/10.1007/978-981-16-0586-4_24",
+          researchHighlight: { icon: "assets/icon_trophy.svg", text: "Published at IJCACI Springer 2021" }
+        }
+      ];
 
-      <article class="card">
-        <h3>Accessible Data Visualization Tool</h3>
-        <div class="card-meta">2023 | D3.js + Web Standards</div>
-        <p class="card-description">Tool for creating accessible charts and data visualizations with automatic alt text generation and keyboard navigation support.</p>
-        <a href="#" class="card-link">View project →</a>
-      </article>
+      // Renders the highlight's own icon asset alongside its text
+      function renderHighlight(highlight) {
+        return `<img class="highlight-icon" src="${highlight.icon}" alt="" aria-hidden="true">${highlight.text}`;
+      }
 
-      <article class="card">
-        <h3>Usability Testing Platform</h3>
-        <div class="card-meta">2022 | Vue.js + Node.js</div>
-        <p class="card-description">Platform for conducting remote usability tests with built-in accessibility testing features and automated WCAG compliance checks.</p>
-        <a href="#" class="card-link">View project →</a>
-      </article>
-    </section>  -->
+      // Renders a link button, or a disabled "Coming soon" placeholder when no url is provided; "none" hides the button entirely
+      function renderProjectLink(url, label, extraClass = '') {
+        if (url === 'none') return '';
+        if (url) {
+          return `<a class="link-button ${extraClass}" href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+        }
+        return `<span class="link-button ${extraClass} disabled" aria-disabled="true">Code uploading soon</span>`;
+      }
+
+      function renderProjectPaperLink(url, label, extraClass = '') {
+        if (!url) return '';
+        return `<a class="link-button ${extraClass}" href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+      }
+
+      function createProjectCard(project) {
+        return `
+          <div class="project-card">
+            <div>
+              <div class="carousel-container">
+                <img src="" alt="${project.title} image" class="carousel-image">
+                <video class="carousel-video" muted playsinline style="display:none"></video>
+                <button class="carousel-nav prev" aria-label="Previous image"></button>
+                <button class="carousel-nav next" aria-label="Next image"></button>
+                <div class="carousel-dots"></div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <p class="project-category">${project.category}</p>
+              <h2 class="project-title">${project.title}</h2>
+              <p class="research-highlight">${renderHighlight(project.researchHighlight)}</p>
+              <p class="project-description">${project.description}</p>
+
+              <div class="project-meta">
+                <div class="meta-group">                  
+                  <div class="tech-tags">${project.tools.map(tool => `<span class="tech-tag">${tool}</span>`).join('')}</div>
+                </div>                
+              </div>
+
+              <div class="project-links">
+                ${renderProjectLink(project.github, 'Code')}
+                ${renderProjectPaperLink(project.paper, 'Paper')}
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      // Media items can be plain URL strings (images/gifs) or { type: 'video', src } objects; video files are also auto-detected by extension
+      function getMediaItem(project, index) {
+        const entry = project.images[index];
+        if (typeof entry === 'string') {
+          const isVideo = /\.(mp4|webm|ogg)(\?.*)?$/i.test(entry);
+          return { type: isVideo ? 'video' : 'image', src: entry };
+        }
+        return entry;
+      }
+
+      // Sets up an independent, self-contained image/video carousel for a single project card
+      function initCarousel(card, project) {
+        let currentImageIndex = 0;
+        let autoPlayInterval = null;
+        let isAutoPlaying = true;
+        let videoEndedHandler = null;
+        const imageEl = card.querySelector('.carousel-image');
+        const videoEl = card.querySelector('.carousel-video');
+        const dotsContainer = card.querySelector('.carousel-dots');
+
+        function goToNext() {
+          currentImageIndex = (currentImageIndex + 1) % project.images.length;
+          renderMedia();
+        }
+
+        function clearAutoAdvance() {
+          if (autoPlayInterval) clearInterval(autoPlayInterval);
+          autoPlayInterval = null;
+          if (videoEndedHandler) {
+            videoEl.removeEventListener('ended', videoEndedHandler);
+            videoEndedHandler = null;
+          }
+        }
+
+        function scheduleAutoAdvance(item) {
+          clearAutoAdvance();
+          if (!isAutoPlaying) return;
+          if (item.type === 'video') {
+            videoEndedHandler = goToNext;
+            videoEl.addEventListener('ended', videoEndedHandler, { once: true });
+          } else {
+            autoPlayInterval = setInterval(goToNext, 4000);
+          }
+        }
+
+        function stopAutoPlay() {
+          isAutoPlaying = false;
+          clearAutoAdvance();
+        }
+
+        function renderMedia() {
+          const item = getMediaItem(project, currentImageIndex);
+
+          if (item.type === 'video') {
+            imageEl.style.display = 'none';
+            videoEl.style.display = '';
+            videoEl.src = item.src;
+            videoEl.play().catch(() => {});
+          } else {
+            videoEl.pause();
+            videoEl.removeAttribute('src');
+            videoEl.style.display = 'none';
+            imageEl.style.display = '';
+            imageEl.src = item.src;
+          }
+
+          dotsContainer.innerHTML = project.images
+            .map((_, idx) => `
+              <button class="dot ${idx === currentImageIndex ? 'active' : ''}" 
+                      data-index="${idx}" 
+                      aria-label="Go to slide ${idx + 1}"></button>
+            `)
+            .join('');
+
+          dotsContainer.querySelectorAll('.dot').forEach(dot => {
+            dot.addEventListener('click', (e) => {
+              currentImageIndex = parseInt(e.target.dataset.index);
+              renderMedia();
+              stopAutoPlay();
+            });
+          });
+
+          scheduleAutoAdvance(item);
+        }
+
+        card.querySelector('.carousel-nav.prev').addEventListener('click', () => {
+          currentImageIndex = (currentImageIndex - 1 + project.images.length) % project.images.length;
+          renderMedia();
+          stopAutoPlay();
+        });
+
+        card.querySelector('.carousel-nav.next').addEventListener('click', () => {
+          goToNext();
+          stopAutoPlay();
+        });
+
+        renderMedia();
+      }
+
+      // Initialize: render all projects at once, each with its own carousel
+      const projectsContainer = document.getElementById('projectsContainer');
+      projectsContainer.innerHTML = projects.map(createProjectCard).join('');
+      document.querySelectorAll('.project-card').forEach((card, idx) => initCarousel(card, projects[idx]));
+    </script>
 
     <!-- Posters Section -->
     <section id="posters">
