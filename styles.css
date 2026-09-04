@@ -407,6 +407,7 @@ h1 {
     /* font-size: 32px; */
     margin-bottom: 0;
     color: var(--color-ink);
+    text-align: center;
 }
 
 h2 {
@@ -1088,6 +1089,7 @@ footer p {
 .pub-filters {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: var(--space-1);
   margin-top: var(--space-2);
 }
@@ -1096,7 +1098,7 @@ footer p {
   margin: 0;
   padding: 0;
 }
-.filter-group .tag-row { margin: 0; }
+.filter-group .tag-row { margin: 0; justify-content: center; }
 
 .tag-row { 
   display: flex; 
