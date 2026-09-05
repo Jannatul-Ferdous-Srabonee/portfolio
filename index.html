@@ -649,6 +649,14 @@
         const imageEl = card.querySelector('.carousel-image');
         const videoEl = card.querySelector('.carousel-video');
         const dotsContainer = card.querySelector('.carousel-dots');
+        const prevBtn = card.querySelector('.carousel-nav.prev');
+        const nextBtn = card.querySelector('.carousel-nav.next');
+        const hasMultipleItems = project.images.length > 1;
+
+        if (!hasMultipleItems) {
+          prevBtn.style.display = 'none';
+          nextBtn.style.display = 'none';
+        }
 
         function goToNext() {
           currentImageIndex = (currentImageIndex + 1) % project.images.length;
@@ -696,13 +704,15 @@
             imageEl.src = item.src;
           }
 
-          dotsContainer.innerHTML = project.images
-            .map((_, idx) => `
-              <button class="dot ${idx === currentImageIndex ? 'active' : ''}" 
-                      data-index="${idx}" 
-                      aria-label="Go to slide ${idx + 1}"></button>
-            `)
-            .join('');
+          dotsContainer.innerHTML = hasMultipleItems
+            ? project.images
+                .map((_, idx) => `
+                  <button class="dot ${idx === currentImageIndex ? 'active' : ''}" 
+                          data-index="${idx}" 
+                          aria-label="Go to slide ${idx + 1}"></button>
+                `)
+                .join('')
+            : '';
 
           dotsContainer.querySelectorAll('.dot').forEach(dot => {
             dot.addEventListener('click', (e) => {
@@ -715,13 +725,13 @@
           scheduleAutoAdvance(item);
         }
 
-        card.querySelector('.carousel-nav.prev').addEventListener('click', () => {
+        prevBtn.addEventListener('click', () => {
           currentImageIndex = (currentImageIndex - 1 + project.images.length) % project.images.length;
           renderMedia();
           stopAutoPlay();
         });
 
-        card.querySelector('.carousel-nav.next').addEventListener('click', () => {
+        nextBtn.addEventListener('click', () => {
           goToNext();
           stopAutoPlay();
         });
