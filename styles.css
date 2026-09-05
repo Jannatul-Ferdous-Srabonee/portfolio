@@ -489,6 +489,13 @@ p {
     order: 2;
 }
 
+.card-content p {
+  font-size: 0.75rem;   
+  font-weight: bold;
+  color: var(--color-ink-soft);
+  margin: 0 0 0 0;
+}
+
 .card h3 {
     /* font-family: var(--font-body);
     font-size: 1rem;
