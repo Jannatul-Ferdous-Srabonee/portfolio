@@ -583,11 +583,12 @@
 
       // Renders a link button, or a disabled "Coming soon" placeholder when no url is provided; "none" hides the button entirely
       function renderProjectLink(url, label, extraClass = '') {
+        const icon = '<img class="link-button-icon" src="assets/icon_code.svg" alt="" aria-hidden="true">';
         if (url === 'none') return '';
         if (url) {
-          return `<a class="link-button ${extraClass}" href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+          return `<a class="link-button ${extraClass}" href="${url}" target="_blank" rel="noopener noreferrer">${icon}${label}</a>`;
         }
-        return `<span class="link-button ${extraClass} disabled" aria-disabled="true">Code uploading soon</span>`;
+        return `<span class="link-button ${extraClass} disabled" aria-disabled="true">${icon}Code uploading soon</span>`;
       }
 
       function renderProjectPaperLink(url, label, extraClass = '') {
