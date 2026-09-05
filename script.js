@@ -245,7 +245,7 @@ initTheme();
 
     // hiding under review and in progress papers
     if (status) {
-      status.textContent = `Acceptance rates are provided when available.`;
+      status.textContent = `Showing published works only. Acceptance rates are provided when available.`;
       // const total = cards.length;
       // if (visibleCount === total) {
       //   status.textContent = `Showing all ${total} publications. Acceptance rates are provided when available.`;
